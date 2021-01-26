@@ -1,0 +1,81 @@
+<template>
+  <div class="relative sm:px-16 px-7">
+    <button
+      class="w-4 sm:w-auto next absolute rotate-180 right-0 top-1/2 transform -translate-y-1/2 z-10"
+      @click="slider.slideNext()"
+    >
+      <img src="~assets/img/slider-arrow.svg" alt="">
+    </button>
+    <button
+      class="w-4 sm:w-auto prev absolute  left-0 top-1/2 transform -translate-y-1/2 z-10"
+      @click="slider.slidePrev()"
+    >
+      <img src="~assets/img/slider-arrow.svg" alt="" >
+    </button>
+    <Swiper
+      :options="sliderOptions"
+      ref="slider"
+      @slideChange="onSlideChange"
+    >
+
+      <SwiperSlide v-for="(slide, index) in slides" :key="index" >
+        <PosterSlide
+            :img="slide.img"
+            :title="slide.title"
+            :btn="slide.btn"
+            :link="slide.link"
+          />
+      </SwiperSlide>
+    </Swiper>
+  </div>
+
+</template>
+
+<script>
+import Card from "~/components/cards/Card";
+
+export default {
+  name: "PosterSlider",
+  props: {
+    slides: {
+        type: Array,
+      required: true,
+    },
+
+  },
+  data: () => ({
+    currentSlide: 0,
+    sliderOptions: {
+      keyboard: true,
+      speed: 1000,
+      slidesPerView: 1,
+      spaceBetween: 0,
+      breakpoints: {
+        1024: {
+          slidesPerView: 2,
+          spaceBetween: 60,
+        },
+        1360: {
+          slidesPerView: 2,
+          spaceBetween: 100,
+        },
+      }
+    },
+  }),
+  methods: {
+    onSlideChange () {
+      this.currentSlide = this.slider.activeIndex
+    }
+  },
+  components: {Card},
+  computed: {
+    slider() {
+      return this.$refs.slider.$swiper
+    }
+  },
+}
+</script>
+
+<style scoped>
+
+</style>

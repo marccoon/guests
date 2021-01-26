@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: "OpenSans";
+  font-weight: 400;
+  src: url(../fonts/OpenSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: "OpenSans";
+  font-weight: 300;
+  src: url(../fonts/OpenSans-Light.ttf);
+}
+@font-face {
+  font-family: "CaviarDreams";
+  font-weight: 400;
+  src: url(../fonts/CaviarDreams.ttf);
+}
+@font-face {
+  font-family: "CaviarDreams";
+  font-weight: 700;
+  src: url(../fonts/CaviarDreams-Bold.ttf);
+}
+
+
+html, body {
+  font-family: "OpenSans";
+}
+* {
+  outline: none!important;
+}
+.container {
+  @apply px-4;
+  @screen sm {
+    @apply px-6;
+  }
+  @screen lg {
+    @apply px-8;
+  }
+}
+
+/*@font-face {*/
+/*  font-family: "Roboto";*/
+/*  font-weight: 400;*/
+/*  src: url(../fonts/Roboto-Regular.ttf);*/
+/*}*/
+
+/*@font-face {*/
+/*  font-family: "Roboto";*/
+/*  font-weight: 500;*/
+/*  src: url(../fonts/Roboto-Medium.ttf);*/
+/*}*/
+
+/*@font-face {*/
+/*  font-family: "Roboto";*/
+/*  font-weight: 700;*/
+/*  src: url(../fonts/Roboto-Bold.ttf);*/
+/*}*/
