@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="font-normal text-text md:text-base text-xs text-center">г. Минск, пр-т Независимости, 25</div>
+    <div class="font-normal text-text md:text-base text-xs text-center">{{$t('contacts.address')}}</div>
     <div class="font-normal text-contact md:text-base text-xs flex sm:flex-row flex-col justify-center items-center underline mt-4">
       <a class="sm:mx-5 ">+375 29 6777999</a>
       <a class="sm:mx-5 sm:mt-0 mt-1">+375 17 3277841</a>
@@ -8,16 +8,16 @@
     </div>
     <div class="text-contact sm:mt-8 mt-4 md:text-base text-xs lg:mt-10 sm:mt-4 mt-2 flex justify-center items-center sm:flex-row flex-col">
         <div class="flex justify-end sm:mx-5">
-          <div class="text-right sm:mr-5 mr-3">Пн–Чт</div>
-          <div class="text-text">с 12:00 до 01:00</div>
+          <div class="text-right sm:mr-5 mr-3">{{$t('contacts.day1')}}</div>
+          <div class="text-text">{{$t('contacts.time1')}}</div>
         </div>
         <div class="flex justify-end sm:mx-5 sm:mt-0 mt-1">
-          <div class="text-right  sm:mr-5 mr-3">Пт–Сб</div>
-          <div class="text-text">с 12:00 до 03:00</div>
+          <div class="text-right  sm:mr-5 mr-3">{{$t('contacts.day2')}}</div>
+          <div class="text-text">{{$t('contacts.time2')}}</div>
         </div>
         <div class="flex justify-end sm:mx-5 sm:mt-0 mt-1">
-          <div class="text-right sm:mr-5 mr-3">Вс</div>
-          <div class="text-text">с 12:00 до 01:00</div>
+          <div class="text-right sm:mr-5 mr-3">{{$t('contacts.day3')}}</div>
+          <div class="text-text">{{$t('contacts.time3')}}</div>
         </div>
       </div>
     <SocialIcon

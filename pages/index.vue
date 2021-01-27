@@ -1,12 +1,12 @@
 <template>
-  <div class="bg-bg2 bg-repeat-y bg-100% bg-center">
+  <div class="bg-bg bg-repeat-y bg-100% bg-center">
     <section class="bg-index bg-cover bg-center lg:h-144 sm:h-96 h-80 py-4">
       <div class="container h-full flex flex-col justify-between">
         <SocialIcon
           class="ml-auto mr-0 "
         />
         <Form class="transform sm:translate-y-16 translate-y-1/2 "
-              btn="Забронировать"
+
         />
       </div>
     </section>
@@ -16,8 +16,8 @@
           img="img/index-about-img.png"
           :title="$t('mainPage.aboutUsTitle')"
           :text="$t('mainPage.aboutUsText')"
-          linkName="Узнать больше"
-          link="/"
+          :linkName="$t('mainPage.aboutUsLink')"
+          link="/about-us"
           :reverse="false"
         />
       </div>
@@ -25,26 +25,24 @@
     <section class="lg:pt-20 lg:pb-40 sm:pt-16 sm:pb-32 pt-10 pb-20">
       <PhotoPhrase
         img="img/img-3.png"
-        phrase="Мы гордимся нашей
-                непринужденной атмосферой
-                и дружелюбным персоналом."
+        :phrase="$t('mainPage.phrase')"
         :reverse="true"
       />
     </section>
     <section class="flex flex-wrap">
       <div class="md:w-1/2 w-full xl:py-56 lg:py-36 md:py-16 sm:py-20 py-16 bg-index-menu-1 bg-cover">
         <Card
-          title="Основное меню"
-          btn="перейти в меню"
-          link="/"
+          :title="$t('mainPage.mainMenuTitle')"
+          :btn="$t('mainPage.menuBtn')"
+          link="/main-menu"
           class="mx-auto"
         />
       </div>
       <div class="md:w-1/2 w-full xl:py-56 lg:py-36 md:py-16 sm:py-20 py-16 bg-index-menu-2 bg-cover">
         <Card
-          title="Обеденное меню"
-          btn="перейти в меню"
-          link="/"
+          :title="$t('mainPage.mainMenuTitle')"
+          :btn="$t('mainPage.menuBtn')"
+          link="/lunch-menu"
           class="mx-auto"
         />
       </div>
@@ -54,14 +52,11 @@
       <div class="container">
         <div class="text-center xl:w-3/5 lg:w-4/5 mx-auto">
           <Title
-            title="Афиша"
+            :title="$t('mainPage.posterTitle')"
             class="mx-auto block"
           />
           <div class="md:text-base text-xs text-text">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
-            mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa
-            quis enim.
+            {{"$t('mainPage.posterText')"}}
           </div>
         </div>
         <PosterSlider
@@ -74,7 +69,7 @@
     <section class="lg:pt-20 lg:pb-40 sm:pt-16 sm:pb-32 pt-10 pb-20">
       <div class="container">
         <Title
-          title="Галерея"
+          :title="$t('mainPage.galleryTitle')"
           class="mx-auto block"
         />
         <GallerySlider
@@ -87,11 +82,11 @@
       <div class="lg:w-1/2 w-full bg-contact flex justify-center items-center py-10">
         <div class=" flex flex-col items-center">
           <Title
-            title="Контакты"
+            :title="$t('contacts.title')"
             class="mx-auto block"
           />
           <div>
-            <div class="text-text md:text-base text-xs text-center">г. Минск, пр-т Независимости, 25</div>
+            <div class="text-text md:text-base text-xs text-center">{{$t('contacts.address')}}</div>
             <div class="text-contact md:text-base text-xs flex lg:flex-col sm:flex-row flex-col items-center underline lg:mt-5 sm:mt-4 mt-2">
               <a class="lg:mx-0 sm:mx-5 ">+375 29 6777999</a>
               <a class="lg:mt-2 lg:mx-0 sm:mx-5 sm:mt-0 mt-1">+375 17 3277841</a>
@@ -99,19 +94,19 @@
             </div>
           </div>
           <div class="sm:mt-8 mt-4">
-            <div class="text-text md:text-base text-xs text-center">Время работы:</div>
+            <div class="text-text md:text-base text-xs text-center">{{$t('contacts.timeTitle')}}</div>
             <div class="text-contact md:text-base text-xs lg:mt-5 sm:mt-4 mt-2 flex lg:flex-col sm:flex-row flex-col">
               <div class="flex justify-end lg:mx-0 sm:mx-5">
-                <div class="text-right sm:mr-5 mr-3">Пн–Чт</div>
-                <div class="text-text">с 12:00 до 01:00</div>
+                <div class="text-right sm:mr-5 mr-3">{{$t('contacts.day1')}}</div>
+                <div class="text-text">{{$t('contacts.time1')}}</div>
               </div>
               <div class="flex justify-end lg:mt-2 lg:mx-0 sm:mx-5 sm:mt-0 mt-1">
-                <div class="text-right sm:mr-5 mr-3">Пт–Сб</div>
-                <div class="text-text">с 12:00 до 03:00</div>
+                <div class="text-right sm:mr-5 mr-3">{{$t('contacts.day2')}}</div>
+                <div class="text-text">{{$t('contacts.time2')}}</div>
               </div>
               <div class="flex justify-end lg:mt-2 lg:mx-0 sm:mx-5 sm:mt-0 mt-1">
-                <div class="text-right sm:mr-5 mr-3">Вс</div>
-                <div class="text-text">с 12:00 до 01:00</div>
+                <div class="text-right sm:mr-5 mr-3">{{$t('contacts.day3')}}</div>
+                <div class="text-text">{{$t('contacts.time3')}}</div>
               </div>
             </div>
           </div>

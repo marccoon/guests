@@ -2,17 +2,17 @@
   <div class="flex justify-between items-center w-24">
     <a href="#">
       <img
-        src="img/facebook.svg"
+        src="~assets/img/facebook.svg"
       >
     </a>
     <a href="#">
       <img
-        src="img/instagram.svg"
+        src="~assets/img/instagram.svg"
       >
     </a>
     <a href="#">
       <img
-        src="img/vk.svg"
+        src="~assets/img/vk.svg"
       >
     </a>
   </div>

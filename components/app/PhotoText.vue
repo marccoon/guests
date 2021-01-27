@@ -5,7 +5,7 @@
               'flex-row-reverse': reverse
             }"
   >
-    <img class="sm:w-5/12 w-full sm:h-auto h-48 object-cover "
+    <img class="sm:w-5/12 w-full object-cover "
       :src="img"
     >
     <div class="py-2 sm:w-1/2 w-full flex flex-col justify-center sm:m-0 mt-2">

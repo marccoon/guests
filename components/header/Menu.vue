@@ -17,7 +17,7 @@
         class="my-6"
       >
         <span class="flex items-center cursor-pointer">
-                  Меню
+                  {{$t('navigation.item2')}}
         <svg
           :class="{
           'rotate-180': !subMenu,
@@ -31,33 +31,33 @@
 
         <ul
           ref="submenu"
-          class="overflow-hidden ml-7 text-base"
+          class="overflow-hidden ml-7 md:text-base sm:text-sm text-xs"
         >
           <li class=" mt-6">
-            <nuxt-link to="/main-menu" @click.native="$emit('closeMenu')">Основное меню</nuxt-link>
+            <nuxt-link to="/main-menu" @click.native="$emit('closeMenu')">{{$t('navigation.item3')}}</nuxt-link>
           </li>
           <li class="mt-4">
-            <nuxt-link to="/lunch-menu" @click.native="$emit('closeMenu')">Обеденное меню</nuxt-link>
+            <nuxt-link to="/lunch-menu" @click.native="$emit('closeMenu')">{{$t('navigation.item4')}}</nuxt-link>
           </li>
         </ul>
       </li>
       <li class="my-6">
-        <nuxt-link to="/poster" @click.native="$emit('closeMenu')">Афиша</nuxt-link>
+        <nuxt-link to="/poster" @click.native="$emit('closeMenu')">{{$t('navigation.item5')}}</nuxt-link>
       </li>
       <li class="my-6">
-        <nuxt-link to="/gallery" @click.native="$emit('closeMenu')">Галерея</nuxt-link>
+        <nuxt-link to="/gallery" @click.native="$emit('closeMenu')">{{$t('navigation.item6')}}</nuxt-link>
       </li>
       <li class="my-6">
-        <nuxt-link to="/contacts" @click.native="$emit('closeMenu')">Контакты</nuxt-link>
+        <nuxt-link to="/contacts" @click.native="$emit('closeMenu')">{{$t('navigation.item7')}}</nuxt-link>
       </li>
     </ul>
     <Button
-      btn="Забронировать стол"
+      :btn="$t('btns.menuBtn')"
       class="md:mt-20 mt-10 max-w-64"
     />
     <Link
-      linkName="Новогодние корпоративы"
-      link="/"
+      :linkName="$t('links.menuLink')"
+      link="/poster"
       class="mt-8"
     />
   </menu>

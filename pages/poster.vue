@@ -1,15 +1,15 @@
 <template>
-  <div class="pt-4 lg:pb-40 sm:pb-32 pb-20 bg-bg2 bg-repeat-y bg-100% bg-center">
+  <div class="bg-bg bg-repeat-y bg-100% bg-center pt-4 lg:pb-40 sm:pb-32 pb-20 ">
     <div class="container relative">
       <SocialIcon
         class="ml-auto mr-0"
       />
       <Title
-        title="Афиша"
+        :title="$t('posters.title')"
         class="lg:mt-24 sm:mt-16 my-12 mx-auto"
       />
       <div >
-          <Post
+          <Posters
             :posters="posters"
             class="lg:mt-24 sm:mt-16 mt-8"
           />
@@ -21,7 +21,7 @@
 <script>
 import SocialIcon from "~/components/app/SocialIcon";
 import Title from "~/components/app/Title";
-import PosterCard from "~/components/cards/PosterCard";
+import Posters from "~/components/cards/Posters";
 export default {
   layout: 'no-footer',
   data: () => ({
@@ -49,7 +49,7 @@ export default {
       },
     ]
   }),
-  components: {SocialIcon, Title, PosterCard},
+  components: {SocialIcon, Title, Posters},
 }
 </script>
 

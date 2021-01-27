@@ -4,11 +4,10 @@
 
     <Nuxt />
 
-    <footer class="bg-bg2 footer">
+    <footer class="bg-bg footer">
       <div class="container">
         <Form class=""
               title="true"
-              btn="Забронировать"
         />
         <div class="flex flex-col items-center lg:py-16 sm:py-12 py-8">
           <Logo />

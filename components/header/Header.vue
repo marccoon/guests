@@ -1,7 +1,7 @@
 <template>
   <div class="relative">
     <ModalMap />
-    <header class="bg-bg2 bg-repeat-y bg-100% bg-center relative z-20">
+    <header class="bg-bg bg-repeat-y bg-100% bg-center relative z-20">
       <div class="container relative flex justify-between items-center z-20">
         <div @click="menuOpen = !menuOpen">
           <div class="w-16 h-8 flex justify-center items-center">

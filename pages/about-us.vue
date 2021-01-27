@@ -1,10 +1,10 @@
 <template>
-  <div class="bg-bg2 bg-repeat-y bg-100% bg-center">
+  <div class="bg-bg bg-repeat-y bg-100% bg-center">
     <section class="md:h-96 h-56 bg-about-bg bg-cover bg-center">
       <div class="container flex items-center justify-center h-full">
 
         <Title
-          title="О нас"
+          :title="$t('aboutUs.aboutUsTitle')"
         />
       </div>
     </section>
@@ -13,27 +13,7 @@
         <PhotoText
           img="img/index-about-img.png"
           title=""
-          text="
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-            commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-            penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-            Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-            Nulla consequat massa quis enim.
-            <br>
-            <br>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-            commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-            penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-            Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-            Nulla consequat massa quis enim.
-            <br>
-            <br>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-            commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-            penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-            Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-            Nulla consequat massa quis enim.
-          "
+          :text="$t('aboutUs.text1')"
           linkName=""
           link=""
           :reverse="false"
@@ -43,9 +23,7 @@
     <section class="lg:py-20 sm:py-16 py-10">
       <PhotoPhrase
         img="img/img-3.png"
-        phrase="Мы гордимся нашей
-                  непринужденной атмосферой
-                  и дружелюбным персоналом."
+        :phrase="$t('aboutUs.phrase1')"
         :reverse="true"
       />
     </section>
@@ -60,7 +38,7 @@
     <section class="lg:py-20 sm:py-16 py-10">
       <PhotoPhrase
         img="img/img-3.png"
-        phrase="Хорошие продукты и техника лежат в основе того, что мы делаем. Мы считаем, что лучшие блюда — это опыт."
+        :phrase="$t('aboutUs.phrase2')"
         :reverse="false"
       />
     </section>
@@ -69,28 +47,8 @@
         <PhotoText
           img="img/index-about-img.png"
           title=""
-          text="
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-            commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-            penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-            Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-            Nulla consequat massa quis enim.
-            <br>
-            <br>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-            commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-            penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-            Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-            Nulla consequat massa quis enim.
-            <br>
-            <br>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-            commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-            penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-            Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-            Nulla consequat massa quis enim.
-          "
-          linkName="Перейти в меню"
+          :text="$t('aboutUs.text2')"
+          :linkName="$t('aboutUs.link1')"
           link="/"
           :reverse="true"
         />

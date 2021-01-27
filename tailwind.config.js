@@ -80,8 +80,7 @@ module.exports = {
         arrowHover: '#fff',
       },
       backgroundImage: theme => ({
-        'bg': "url('~assets/img/bg.svg')",
-        'bg2': "url('~assets/img/bg-body.png')",
+        'bg': "url('~assets/img/bg-body.png')",
         'index': "url('~assets/img/index-bg.png')",
         'index-menu-1': "url('~assets/img/menu-img-1.png')",
         'index-menu-2': "url('~assets/img/menu-img-2.png')",

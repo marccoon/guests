@@ -12,7 +12,7 @@
           <rect x="6.68628" y="34.9706" width="40" height="1" transform="rotate(-45 6.68628 34.9706)" fill="#C9AB81"/>
         </svg>
       </button>
-      <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A034e22121af666a25de623504f70f8de8771a7ec0a9f415773efc111b85f8d13&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
+      <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A034e22121af666a25de623504f70f8de8771a7ec0a9f415773efc111b85f8d13&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=true"></script>="100%" frameborder="0"></iframe>
     </div>
   </div>
 </template>

@@ -23,12 +23,13 @@
       </SwiperSlide>
     </Swiper>
     <div class="flex justify-center items-center overflow-hidden sm:mt-12 mt-3">
-      <button
-        class=" bg-pagination mx-2"
-        v-for="(btn, index) in slides"
-        :class="{'sm:w-1 w-0.5 sm:h-4 h-2.5 ': index === currentSlide, 'sm:w-0.5 w-px sm:h-3 h-1.5': index !== currentSlide,}"
-        @click="slider.slideTo(index)"
-      ></button>
+      <div @click="slider.slideTo(index)"   v-for="(btn, index) in slides" class="flex items-center px-2.5 py-1.5 cursor-pointer">
+        <button
+          class=" bg-pagination"
+          :class="{'sm:w-1 w-0.5 sm:h-4 h-2.5 ': index === currentSlide, 'sm:w-0.5 w-px sm:h-3 h-1.5': index !== currentSlide,}"
+        ></button>
+      </div>
+
     </div>
   </div>
 

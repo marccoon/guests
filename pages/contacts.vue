@@ -1,11 +1,11 @@
 <template>
-  <div class="pt-4 bg-bg2 bg-repeat-y bg-100% bg-center">
+  <div class="pt-4 bg-bg bg-repeat-y bg-100% bg-center">
     <div class="container relative">
       <SocialIcon
         class="ml-auto mr-0"
       />
       <Title
-        title="Контакты"
+        :title="$t('contacts.title')"
         class="lg:mt-24 sm:mt-16 mt-12 mx-auto"
       />
       <Contacts

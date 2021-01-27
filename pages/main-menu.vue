@@ -1,10 +1,10 @@
 <template>
-  <div class="bg-bg2 bg-repeat-y bg-100% bg-center">
+  <div class="bg-bg bg-repeat-y bg-100% bg-center">
     <section class="md:h-96 h-56 bg-main-menu bg-cover bg-center">
       <div class="container flex items-center justify-center h-full">
 
         <Title
-          title="Основное меню"
+          :title="$t('mainMenu.title')"
         />
       </div>
     </section>
@@ -15,7 +15,7 @@
             <li v-for="(item, index) in menu"
                 :key="index"
                 @click="tabCLickHandler(item.titleSection)"
-                class="uppercase md:mb-5 text-category"
+                class="uppercase md:mb-5 text-category cursor-pointer"
                 :class="{
                   'text-category lg:text-base text-xs': activeTab !== index,
                   'text-category-active lg:text-lg md:text-sm text-xs': activeTab === index
@@ -43,9 +43,9 @@
     <section class="bg-lunch bg-cover bg-center w-full xl:py-40 md:py-24 py-20">
       <div class="container flex justify-center">
         <Card
-          title="Обеденное меню"
-          btn="перейти в меню"
-          link="/"
+          :title="$t('mainMenu.cardTitle')"
+          :btn="$t('mainMenu.btn')"
+          link="/lunch-menu"
         />
       </div>
     </section>
