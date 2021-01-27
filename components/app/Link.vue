@@ -1,5 +1,5 @@
 <template>
-  <n-link :to="link" v-if="linkName"  class="text-link flex items-center w-max hover:text-link-hover transition-all duration-150">
+  <n-link :to="localePath(`/${link}`)" v-if="linkName"  class="text-link flex items-center w-max hover:text-link-hover transition-all duration-150">
     <span class="uppercase underline lg:text-base text-xs">{{linkName}}</span>
     <svg
       class="lg:ml-4 ml-2 fill-arrow hover:fill-arrowHover"

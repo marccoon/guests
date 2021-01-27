@@ -9,7 +9,7 @@
   >
     <ul class="text-menu uppercase md:text-xl sm:text-base text-sm">
       <li class="my-6">
-        <nuxt-link to="/about-us" @click.native="$emit('closeMenu')"
+        <nuxt-link :to="localePath('/about-us')" @click.native="$emit('closeMenu')"
         >{{$t('navigation.item1')}}</nuxt-link>
       </li>
       <li
@@ -34,21 +34,21 @@
           class="overflow-hidden ml-7 md:text-base sm:text-sm text-xs"
         >
           <li class=" mt-6">
-            <nuxt-link to="/main-menu" @click.native="$emit('closeMenu')">{{$t('navigation.item3')}}</nuxt-link>
+            <nuxt-link :to="localePath('/main-menu')" @click.native="$emit('closeMenu')">{{$t('navigation.item3')}}</nuxt-link>
           </li>
           <li class="mt-4">
-            <nuxt-link to="/lunch-menu" @click.native="$emit('closeMenu')">{{$t('navigation.item4')}}</nuxt-link>
+            <nuxt-link :to="localePath('/lunch-menu')" @click.native="$emit('closeMenu')">{{$t('navigation.item4')}}</nuxt-link>
           </li>
         </ul>
       </li>
       <li class="my-6">
-        <nuxt-link to="/poster" @click.native="$emit('closeMenu')">{{$t('navigation.item5')}}</nuxt-link>
+        <nuxt-link :to="localePath('/poster')" @click.native="$emit('closeMenu')">{{$t('navigation.item5')}}</nuxt-link>
       </li>
       <li class="my-6">
-        <nuxt-link to="/gallery" @click.native="$emit('closeMenu')">{{$t('navigation.item6')}}</nuxt-link>
+        <nuxt-link :to="localePath('/gallery')" @click.native="$emit('closeMenu')">{{$t('navigation.item6')}}</nuxt-link>
       </li>
       <li class="my-6">
-        <nuxt-link to="/contacts" @click.native="$emit('closeMenu')">{{$t('navigation.item7')}}</nuxt-link>
+        <nuxt-link :to="localePath('/contacts')" @click.native="$emit('closeMenu')">{{$t('navigation.item7')}}</nuxt-link>
       </li>
     </ul>
     <Button

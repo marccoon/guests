@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <n-link :to="link" v-if="link" tag="button" class="w-full block uppercase text-btn border
+    <n-link :to="localePath(`/${link}`)" v-if="link" tag="button" class="w-full block uppercase text-btn border
             border-btn lg:text-base text-sm py-3 px-4 text-center hover:text-btn-hover transition-all duration-150">
       {{btn}}
     </n-link>
