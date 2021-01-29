@@ -3,6 +3,9 @@ import en from './langs/en'
 import tr from './langs/tr'
 
 export default {
+  server: {
+    post: 3080
+  },
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'guests',
