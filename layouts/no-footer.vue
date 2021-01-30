@@ -15,8 +15,11 @@
             class="sm:mt-8 mt-4"
           />
         </div>
-        <div class="lg:py-7 py-4 text-footer text-sm text-center">
-          ООО "Белпримстрой"  УНП 190133337
+        <div class="lg:pt-7 pt-4 pb-2 text-footer text-sm text-center">
+          ООО "Белпримстрой" / УНП 190133337
+        </div>
+        <div class="lg:pb-7 pb-4 text-footer text-sm text-center">
+          <a href="https://marcoon.com">дизайн и разработка сайта marccoon.com</a>
         </div>
       </div>
     </footer>
