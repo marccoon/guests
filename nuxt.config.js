@@ -25,9 +25,11 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    { src: './plugins/swiper.js' },
-    { src: '~/plugins/vuelidate' },
+    { src: './plugins/swiper.js', ssr: false },
+    { src: '~/plugins/vuelidate.js' },
     { src: '~/plugins/clickOutside.js' },
+    { src: '~/plugins/datepicker', ssr: false },
+    { src: '~/plugins/phoneMaskInput', ssr: false },
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -57,7 +59,9 @@ export default {
   },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
-  axios: {},
+  axios: {
+    baseURL: 'http://gosti-api.dev.fullstack.by/wp-json/wp/v2/'
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {

@@ -14,7 +14,7 @@
           <ul class="md:block grid sm:grid-cols-3 grid-cols-2 gap-2">
             <li v-for="(item, index) in menu"
                 :key="index"
-                @click="tabCLickHandler(item.titleSection)"
+                @click="tabCLickHandler(item.name)"
                 class="uppercase md:mb-5 text-category cursor-pointer"
                 :class="{
                   'text-category lg:text-base text-xs': activeTab !== index,
@@ -22,7 +22,7 @@
                 }"
             >
 
-              {{item.titleSection}}
+              {{item.name}}
             </li>
           </ul>
         </div>
@@ -33,8 +33,8 @@
           >
             <MenuItem
               :price="item.price"
-              :title="item.title"
-              :text="item.text"
+              :title="item.name"
+              :text="item.description"
             />
           </div>
         </div>
@@ -57,175 +57,35 @@ import MenuItem from "~/components/app/MenuItem";
 import Card from "~/components/cards/Card";
 export default {
   layout: 'no-footer',
+  components: {Card, Title, MenuItem},
+  async asyncData({ app }) {
+    const data = await app.$axios.$get(`/pages?lang=${app.i18n.locale}&slug=main-menu`)
+    const menu = data[0].ACF.group
+    return { menu }
+  },
   data: () => ({
     activeTab: 0,
-    menu: [
-      {
-        titleSection: 'Блюда белорусской кухни',
-        dishes: [
-            {
-              title: 'Горшочек «По‑деревенски»',
-              price: '16 р.',
-              text: 'Оладьи картофельные, соус сырный, морковь, лук, ветчина, курица отварная, \n' +
-                'горошек зелёный консервированный',
-            },
-            {
-              title: 'Драники с белыми грибами в сливочном соусе ',
-              price: '19 р.',
-            },
-          {
-            title: 'Драники с красной икрой',
-            price: '16 р.',
-          },
-          {
-            title: 'Мачанка с картофельными оладьями',
-            price: '18 р.',
-            text: 'Оладьи картофельные, свинина тушёная, колбаса жареная, соус сметанный и грибами',
-          },
-          {
-            title: 'Драник-бургер',
-            price: '12 р.',
-          },
-          ]
-      },
-      {
-        titleSection: 'Холодные закуски',
-        dishes: [
-          {
-            title: '2 Горшочек «По‑деревенски»',
-            price: '16 р.',
-            text: 'Оладьи картофельные, соус сырный, морковь, лук, ветчина, курица отварная, \n' +
-              'горошек зелёный консервированный',
-          },
-
-        ]
-      },
-      {
-        titleSection: 'Салаты',
-        dishes: [
-          {
-            title: '2 Горшочек «По‑деревенски»',
-            price: '16 р.',
-            text: 'Оладьи картофельные, соус сырный, морковь, лук, ветчина, курица отварная, \n' +
-              'горошек зелёный консервированный',
-          },
-
-        ]
-      },
-      {
-        titleSection: 'Супы',
-        dishes: [
-          {
-            title: '2 Горшочек «По‑деревенски»',
-            price: '16 р.',
-            text: 'Оладьи картофельные, соус сырный, морковь, лук, ветчина, курица отварная, \n' +
-              'горошек зелёный консервированный',
-          },
-
-        ]
-      },
-      {
-        titleSection: 'Блюда из рыбы',
-        dishes: [
-          {
-            title: '2 Горшочек «По‑деревенски»',
-            price: '16 р.',
-            text: 'Оладьи картофельные, соус сырный, морковь, лук, ветчина, курица отварная, \n' +
-              'горошек зелёный консервированный',
-          },
-
-        ]
-      },
-      {
-        titleSection: 'Блюда из мяса',
-        dishes: [
-          {
-            title: '2 Горшочек «По‑деревенски»',
-            price: '16 р.',
-            text: 'Оладьи картофельные, соус сырный, морковь, лук, ветчина, курица отварная, \n' +
-              'горошек зелёный консервированный',
-          },
-
-        ]
-      },
-      {
-        titleSection: 'Блюда из птицы',
-        dishes: [
-          {
-            title: '2 Горшочек «По‑деревенски»',
-            price: '16 р.',
-            text: 'Оладьи картофельные, соус сырный, морковь, лук, ветчина, курица отварная, \n' +
-              'горошек зелёный консервированный',
-          },
-
-        ]
-      },
-      {
-        titleSection: 'Гарниры',
-        dishes: [
-          {
-            title: '2 Горшочек «По‑деревенски»',
-            price: '16 р.',
-            text: 'Оладьи картофельные, соус сырный, морковь, лук, ветчина, курица отварная, \n' +
-              'горошек зелёный консервированный',
-          },
-
-        ]
-      },
-      {
-        titleSection: 'Хлеб',
-        dishes: [
-          {
-            title: '2 Горшочек «По‑деревенски»',
-            price: '16 р.',
-            text: 'Оладьи картофельные, соус сырный, морковь, лук, ветчина, курица отварная, \n' +
-              'горошек зелёный консервированный',
-          },
-
-        ]
-      },
-      {
-        titleSection: 'Десерты',
-        dishes: [
-          {
-            title: '2 Горшочек «По‑деревенски»',
-            price: '16 р.',
-            text: 'Оладьи картофельные, соус сырный, морковь, лук, ветчина, курица отварная, \n' +
-              'горошек зелёный консервированный',
-          },
-
-        ]
-      },
-      {
-        titleSection: 'Закуски к пиву',
-        dishes: [
-          {
-            title: '2 Горшочек «По‑деревенски»',
-            price: '16 р.',
-            text: 'Оладьи картофельные, соус сырный, морковь, лук, ветчина, курица отварная, \n' +
-              'горошек зелёный консервированный',
-          },
-
-        ]
-      },
-
-    ]
   }),
   computed:{
     dishes() {
       return this.menu[this.activeTab].dishes
+    },
+    locale () {
+      return this.$i18n.locale
     }
   },
   methods:{
     tabCLickHandler(val) {
-      this.activeTab = this.menu.findIndex(i => i.titleSection === val )
+      this.activeTab = this.menu.findIndex(i => i.name === val )
 
       // console.log(currentIndex)
     }
   },
-  components: {Card, Title, MenuItem},
-
-
+  watch: {
+    locale () {
+      this.$router.push(this.localePath('/main-menu'))
+    }
+  }
 }
 </script>
 

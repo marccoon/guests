@@ -59,11 +59,12 @@
             {{"$t('mainPage.posterText')"}}
           </div>
         </div>
-        <PosterSlider
-          :slides="posterSlides"
-          class="lg:mt-24 sm:mt-16 mt-8"
-        />
-
+        <client-only>
+          <PosterSlider
+            :slides="posterSlides"
+            class="lg:mt-24 sm:mt-16 mt-8"
+          />
+        </client-only>
       </div>
     </section>
     <section class="lg:pt-20 lg:pb-40 sm:pt-16 sm:pb-32 pt-10 pb-20">
@@ -72,10 +73,12 @@
           :title="$t('mainPage.galleryTitle')"
           class="mx-auto block"
         />
-        <GallerySlider
-          :slides="gallerySlides"
-          class="sm:mt-16 mt-8"
-        />
+        <client-only>
+          <GallerySlider
+            :slides="gallerySlides"
+            class="sm:mt-16 mt-8"
+          />
+        </client-only>
       </div>
     </section>
     <section class="flex flex-wrap">
