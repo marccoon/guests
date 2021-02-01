@@ -10,14 +10,10 @@
     />
     <div class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 xl:gap-10 lg:gap-6 gap-5">
       <div v-for="(img, index) in images" :key="index" >
-        <img :src="img"  class="mx-auto">
+        <img :src="img.url"  class="mx-auto">
 
       </div>
     </div>
-    <Button
-      :btn="$t('gallery.btn')"
-      class="block lg:mt-24 sm:mt-16 mt-12 mx-auto w-max"
-    />
   </div>
 </div>
 </template>
@@ -30,15 +26,12 @@ import Button from "~/components/form/Button";
 export default {
   components: {Title, Button, SocialIcon},
   layout: 'no-footer',
-  props:{
+  async asyncData({$axios, route}) {
+    const data = await $axios.$get(`/report?slug=${route.params.slug}`)
+    const report = data[0]
+    const images = report.ACF.photos
+    return { report, images }
   },
-  data: () => ({
-    images: [
-      'img/index-about-img.png','img/index-about-img.png','img/index-about-img.png','img/index-about-img.png',
-      'img/index-about-img.png','img/index-about-img.png','img/index-about-img.png','img/index-about-img.png',
-      'img/index-about-img.png',
-    ]
-  }),
 
 }
 </script>

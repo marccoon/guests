@@ -24,32 +24,12 @@ import Title from "~/components/app/Title";
 import Posters from "~/components/cards/Posters";
 export default {
   layout: 'no-footer',
-  data: () => ({
-    posters: [
-      {
-        img: 'img/post-img-1.png',
-        title: 'Happy B-day<br> Нам 8 лет',
-        btn: 'Забронировать',
-        date: '5 ноября',
-        address: 'г. Минск,<br> пр-т Независимости, 25'
-      },
-      {
-        img: 'img/post-img-1.png',
-        title: 'Happy B-day<br> Нам 8 лет',
-        btn: 'Забронировать',
-        date: '5 ноября',
-        address: 'г. Минск,<br> пр-т Независимости, 25'
-      },
-      {
-        img: 'https://images.pexels.com/photos/2113279/pexels-photo-2113279.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-        title: 'Happy B-day<br> Нам 8 лет',
-        btn: 'Забронировать',
-        date: '5 ноября',
-        address: 'г. Минск,<br> пр-т Независимости, 25'
-      },
-    ]
-  }),
   components: {SocialIcon, Title, Posters},
+  async asyncData({app}) {
+    const posters = await app.$axios.$get('/afisha')
+    console.log(posters)
+    return { posters }
+  },
 }
 </script>
 

@@ -4,13 +4,10 @@
     <TitleSmall
       :title="title"
     />
-    <p class="text-card uppercase mt-8">
-      {{date}}
-    </p>
-    <p class="text-card text-center mt-6" v-html="address">
+    <p class="text-card uppercase mt-8" v-html="date">
     </p>
     <Button class="lg:mt-8 sm:mt-8 mt-6 sm:min-w-xxs sm:w-auto w-full"
-            :btn="btn"
+            :btn="$t('btns.posterBtn')"
     />
   </div>
 </template>
@@ -18,6 +15,7 @@
 <script>
 import TitleSmall from "~/components/app/TitleSmall";
 import Button from "~/components/form/Button";
+
 export default {
   name: "PosterCard",
   props: {
@@ -29,11 +27,7 @@ export default {
       type: String,
       required: true,
     },
-    date:{
-      type: String,
-      required: true,
-    },
-    address:{
+    date: {
       type: String,
       required: true,
     },
