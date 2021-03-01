@@ -1,6 +1,5 @@
 import ru from './langs/ru'
-import en from './langs/en'
-import tr from './langs/tr'
+
 
 export default {
   server: {
@@ -49,11 +48,11 @@ export default {
   ],
 
   i18n: {
-    locales: ['en', 'ru', 'tr'],
+    locales: ['ru'],
     defaultLocale: 'ru',
     vueI18n: {
       messages: {
-        en, ru, tr,
+        ru
       }
     }
   },

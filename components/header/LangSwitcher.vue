@@ -13,14 +13,10 @@
     </div>
     <div v-if="active" class="absolute top-full uppercase w-16 py-2 text-select bg-black">
       <ul class="text-center">
-        <li class="py-1 transition-all duration-150 hover:text-select-hover cursor-pointer ">
-          <nuxt-link @click.native="active = false" :to="switchLocalePath('ru')">ru</nuxt-link>
-        </li>
-        <li class="py-1 transition-all duration-150 hover:text-select-hover cursor-pointer ">
-          <nuxt-link @click.native="active = false" :to="switchLocalePath('en')">en</nuxt-link>
-        </li>
-        <li class="py-1 transition-all duration-150 hover:text-select-hover cursor-pointer ">
-          <nuxt-link @click.native="active = false" :to="switchLocalePath('tr')">tr</nuxt-link>
+        <li
+          v-for="local in $i18n.locales"
+          class="py-1 transition-all duration-150 hover:text-select-hover cursor-pointer">
+          <nuxt-link @click.native="active = false" :to="switchLocalePath(local)">{{ local }}</nuxt-link>
         </li>
       </ul>
     </div>

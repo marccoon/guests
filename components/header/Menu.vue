@@ -69,11 +69,11 @@
       :btn="$t('btns.menuBtn')"
       class="md:mt-20 mt-10 max-w-64"
     />
-    <Link
-      :linkName="$t('links.menuLink')"
-      link="/poster"
-      class="mt-8"
-    />
+<!--    <Link-->
+<!--      :linkName="$t('links.menuLink')"-->
+<!--      link="/poster"-->
+<!--      class="mt-8"-->
+<!--    />-->
   </menu>
 </template>
 
