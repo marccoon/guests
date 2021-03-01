@@ -4,7 +4,8 @@
       <img :src="poster.featured_image_url" class="mx-auto object-cover position-absolute">
       <PosterCard
         :title="poster.title.rendered"
-        :date="poster.excerpt.rendered"
+        :date="poster.ACF.date"
+        :excerpt="poster.excerpt.rendered"
         class="group-hover:opacity-100 opacity-0 absolute top-1/2 left-1/2 z-10
                transform -translate-x-1/2 -translate-y-1/2 xl:w-4/5 sm:w-11/12 sm:h-4/5 h-3/4"
       />

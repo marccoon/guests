@@ -15,7 +15,7 @@
         <PhotoText
           img="img/index-about-img.png"
           :title="$t('mainPage.aboutUsTitle')"
-          :text="$t('mainPage.aboutUsText')"
+          :text="page.content.rendered"
           :linkName="$t('mainPage.aboutUsLink')"
           link="/about-us"
           :reverse="false"
@@ -24,7 +24,7 @@
     </section>
     <section class="lg:pt-20 lg:pb-40 sm:pt-16 sm:pb-32 pt-10 pb-20">
       <PhotoPhrase
-        img="img/img-3.png"
+        img="img/img-3.jpg"
         :phrase="$t('mainPage.phrase')"
         :reverse="true"
       />
@@ -136,6 +136,11 @@ import PosterSlider from "~/components/Sliders/PosterSlider";
 import GallerySlider from "~/components/Sliders/GallerySlider";
 import Map from "~/components/app/Map";
 export default {
+  async asyncData({ app }) {
+    const data = await app.$axios.$get(`/pages?lang=${app.i18n.locale}&slug=main`)
+    const page = data[0]
+    return { page }
+  },
   data: () => ({
     posterSlides: [
       {

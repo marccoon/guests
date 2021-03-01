@@ -4,8 +4,8 @@
     <TitleSmall
       :title="title"
     />
-    <p class="text-card uppercase mt-8" v-html="date">
-    </p>
+    <p class="text-card uppercase mt-8" v-html="date"></p>
+    <p class="mt-3 text-white" v-html="excerpt"></p>
     <Button class="lg:mt-8 sm:mt-8 mt-6 sm:min-w-xxs sm:w-auto w-full"
             :btn="$t('btns.posterBtn')"
     />
@@ -23,6 +23,10 @@ export default {
       type: String,
       required: true,
     },
+    excerpt: {
+      type: String,
+      required: true,
+    },
     btn: {
       type: String,
       required: true,
@@ -35,7 +39,3 @@ export default {
   components: {TitleSmall, Button},
 }
 </script>
-
-<style scoped>
-
-</style>

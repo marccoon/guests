@@ -1,16 +1,16 @@
 <template>
   <div class="flex justify-between items-center w-24">
-    <a href="#">
+    <a href="https://www.facebook.com/restopubgosti">
       <img
         src="~assets/img/facebook.svg"
       >
     </a>
-    <a href="#">
+    <a href="http://instagram.com/gosti_restopub">
       <img
         src="~assets/img/instagram.svg"
       >
     </a>
-    <a href="#">
+    <a href="https://vk.com/gosti_restopub">
       <img
         src="~assets/img/vk.svg"
       >

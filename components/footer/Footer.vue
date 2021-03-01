@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="text-footer text-sm text-center">
-      <a href="https://marcoon.com">дизайн и разработка: marccoon.com</a>
+      <a href="https://marccoon.com">дизайн и разработка: marccoon.com</a>
     </div>
   </div>
 </template>

@@ -22,7 +22,7 @@
     </section>
     <section class="lg:py-20 sm:py-16 py-10">
       <PhotoPhrase
-        img="img/img-3.png"
+        img="img/img-3.jpg"
         :phrase="$t('aboutUs.phrase1')"
         :reverse="true"
       />
@@ -37,7 +37,7 @@
     </section>
     <section class="lg:py-20 sm:py-16 py-10">
       <PhotoPhrase
-        img="img/img-3.png"
+        img="img/img-3.jpg"
         :phrase="$t('aboutUs.phrase2')"
         :reverse="false"
       />

@@ -5,7 +5,7 @@
       class="ml-auto mr-0"
     />
     <Title
-      :title="$t('gallery.title')"
+      :title="report.title.rendered"
       class="lg:mt-24 sm:my-16 mt-12 mx-auto"
     />
     <div class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 xl:gap-10 lg:gap-6 gap-5">
