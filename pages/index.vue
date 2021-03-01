@@ -56,7 +56,7 @@
             class="mx-auto block"
           />
           <div class="md:text-base text-xs text-text">
-            {{"$t('mainPage.posterText')"}}
+            {{ $t('mainPage.posterText') }}
           </div>
         </div>
         <client-only>
