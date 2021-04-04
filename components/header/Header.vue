@@ -47,6 +47,7 @@
 import Logo from "~/components/app/Logo";
 import LangSwitcher from "~/components/header/LangSwitcher";
 import Menu from "~/components/header/Menu";
+
 export default {
   name: "Header",
   components: {Menu, LangSwitcher, Logo},

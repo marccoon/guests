@@ -135,6 +135,7 @@ import Title from "~/components/app/Title";
 import PosterSlider from "~/components/Sliders/PosterSlider";
 import GallerySlider from "~/components/Sliders/GallerySlider";
 import Map from "~/components/app/Map";
+
 export default {
   async asyncData({ app }) {
     const data = await app.$axios.$get(`/pages?lang=${app.i18n.locale}&slug=main`)
