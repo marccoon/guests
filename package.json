@@ -6,7 +6,9 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint:fix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
     "@livelybone/vue-datepicker": "^4.0.3",
@@ -28,14 +30,16 @@
     "@nuxtjs/eslint-module": "^2.0.0",
     "@nuxtjs/tailwindcss": "^4.0.2",
     "@tailwindcss/jit": "^0.1.17",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.20.0",
     "eslint-config-prettier": "^6.12.0",
     "eslint-plugin-nuxt": "^1.0.0",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-tailwind": "^0.2.0",
     "eslint-plugin-vue": "^7.6.0",
+    "node-sass": "^4.14.1",
     "postcss": "^8.2.8",
     "prettier": "^2.1.2",
-    "node-sass": "^5.0.0",
     "sass-loader": "^10.1.1"
   }
 }
