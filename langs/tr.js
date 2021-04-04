@@ -1,3 +1,3 @@
-export default  {
-  hi: 'hi tr'
+export default {
+  hi: 'hi tr',
 }

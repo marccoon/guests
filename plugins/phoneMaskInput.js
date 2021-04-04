@@ -1,4 +1,4 @@
 import Vue from 'vue'
-import PhoneMaskInput from "vue-phone-mask-input"
+import PhoneMaskInput from 'vue-phone-mask-input'
 
-Vue.component('PhoneMaskInput',PhoneMaskInput)
+Vue.component('PhoneMaskInput', PhoneMaskInput)

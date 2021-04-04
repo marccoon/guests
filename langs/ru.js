@@ -12,8 +12,8 @@ export default {
     menuLink: 'Новогодние корпоративы',
   },
   btns: {
-    'menuBtn': 'Забронировать стол',
-    'posterBtn': 'Забронировать',
+    menuBtn: 'Забронировать стол',
+    posterBtn: 'Забронировать',
   },
   contacts: {
     title: 'Контакты',
@@ -36,7 +36,8 @@ export default {
   },
   mainPage: {
     aboutUsTitle: 'О нас',
-    aboutUsText: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean\n' +
+    aboutUsText:
+      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean\n' +
       'commodo ligula eget dolor. Aenean massa. Cum sociis natoque\n' +
       'penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n' +
       'Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.\n' +
@@ -48,14 +49,16 @@ export default {
       'Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.\n' +
       'Nulla consequat massa quis enim.',
     aboutUsLink: 'Узнать больше',
-    phrase: 'Мы гордимся нашей\n' +
+    phrase:
+      'Мы гордимся нашей\n' +
       'непринужденной атмосферой\n' +
       'и дружелюбным персоналом.',
     mainMenuTitle: 'Основное меню',
     lunchMenuTitle: 'Обеденное меню',
     menuBtn: 'перейти в меню',
     posterTitle: 'Афиша',
-    posterText: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.\n' +
+    posterText:
+      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.\n' +
       'Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus\n' +
       'mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa\n' +
       'quis enim.',
@@ -63,24 +66,8 @@ export default {
   },
   aboutUs: {
     aboutUsTitle: 'О нас',
-    text1: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean\n' +
-      'commodo ligula eget dolor. Aenean massa. Cum sociis natoque\n' +
-      'penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n' +
-      'Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.\n' +
-      'Nulla consequat massa quis enim.\n' +
-      '<br>\n' +
+    text1:
       'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean\n' +
-      'commodo ligula eget dolor. Aenean massa. Cum sociis natoque\n' +
-      'penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n' +
-      'Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.\n' +
-      'Nulla consequat massa quis enim.\n' +
-      '<br>\n' +
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean\n' +
-      'commodo ligula eget dolor. Aenean massa. Cum sociis natoque\n' +
-      'penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n' +
-      'Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.\n' +
-      'Nulla consequat massa quis enim.',
-    text2: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean\n' +
       'commodo ligula eget dolor. Aenean massa. Cum sociis natoque\n' +
       'penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n' +
       'Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.\n' +
@@ -97,16 +84,35 @@ export default {
       'penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n' +
       'Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.\n' +
       'Nulla consequat massa quis enim.',
-    phrase1: 'Мы гордимся нашей\n' +
+    text2:
+      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean\n' +
+      'commodo ligula eget dolor. Aenean massa. Cum sociis natoque\n' +
+      'penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n' +
+      'Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.\n' +
+      'Nulla consequat massa quis enim.\n' +
+      '<br>\n' +
+      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean\n' +
+      'commodo ligula eget dolor. Aenean massa. Cum sociis natoque\n' +
+      'penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n' +
+      'Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.\n' +
+      'Nulla consequat massa quis enim.\n' +
+      '<br>\n' +
+      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean\n' +
+      'commodo ligula eget dolor. Aenean massa. Cum sociis natoque\n' +
+      'penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n' +
+      'Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.\n' +
+      'Nulla consequat massa quis enim.',
+    phrase1:
+      'Мы гордимся нашей\n' +
       'непринужденной атмосферой\n' +
       'и дружелюбным персоналом.',
-    phrase2: 'Хорошие продукты и техника лежат в основе того, что мы делаем. Мы считаем, что лучшие блюда — это опыт.',
+    phrase2:
+      'Хорошие продукты и техника лежат в основе того, что мы делаем. Мы считаем, что лучшие блюда — это опыт.',
     link1: 'Перейти в меню',
-
   },
   gallery: {
     title: 'Фото, Видео',
-    btn: 'Смотреть еще'
+    btn: 'Смотреть еще',
   },
   lunchMenu: {
     title: 'Обеденное меню',
@@ -119,6 +125,6 @@ export default {
     btn: 'перейти в меню',
   },
   posters: {
-    title: 'Афиша'
+    title: 'Афиша',
   },
 }

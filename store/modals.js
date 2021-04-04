@@ -1,5 +1,5 @@
 export const state = () => ({
-  map: false
+  map: false,
 })
 
 export const mutations = {
@@ -8,15 +8,14 @@ export const mutations = {
   },
   hideMap(state) {
     state.map = false
-  }
+  },
 }
 
-
 export const actions = {
-  hideMap ({commit}) {
+  hideMap({ commit }) {
     commit('hideMap')
   },
-  showMap ({commit}) {
+  showMap({ commit }) {
     commit('showMap')
   },
 }

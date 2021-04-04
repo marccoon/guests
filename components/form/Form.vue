@@ -94,7 +94,7 @@ export default {
   props: {
     title: {
       type: String,
-      required: false,
+      default: '',
     },
   },
   data: () => ({
@@ -108,12 +108,12 @@ export default {
   }),
   methods: {
     submitHandler() {
-      console.log(
-        this.personOptions[this.currentPerson],
-        this.date,
-        this.time,
-        this.phone
-      )
+      // console.log(
+      //   this.personOptions[this.currentPerson],
+      //   this.date,
+      //   this.time,
+      //   this.phone
+      // )
       this.success = true
     },
   },

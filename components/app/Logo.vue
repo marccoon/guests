@@ -1,15 +1,13 @@
 <template>
   <nuxt-link :to="localePath('/')">
-    <img src="~assets/img/svg/logo.svg" alt="" class="sm:w-auto w-24">
+    <img src="~assets/img/svg/logo.svg" alt="" class="sm:w-auto w-24" />
   </nuxt-link>
 </template>
 
 <script>
 export default {
-name: "Logo"
+  name: 'Logo',
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

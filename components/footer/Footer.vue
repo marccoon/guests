@@ -3,7 +3,7 @@
     <div class="container flex justify-between items-center">
       <Logo />
       <div class="text-footer text-sm text-right">
-        ООО "Белпримстрой" <br>
+        ООО "Белпримстрой" <br />
         УНП 190133337
       </div>
     </div>
@@ -15,6 +15,6 @@
 
 <script>
 export default {
-  name: "Footer"
+  name: 'Footer',
 }
 </script>
