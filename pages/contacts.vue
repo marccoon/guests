@@ -16,8 +16,10 @@
 import SocialIcon from '~/components/app/SocialIcon'
 import Title from '~/components/app/Title'
 import Contacts from '~/components/app/Contacts'
+import Map from '~/components/app/Map'
+
 export default {
   // name: "BlogSlider",
-  components: { SocialIcon, Title, Contacts },
+  components: { Map, SocialIcon, Title, Contacts },
 }
 </script>
