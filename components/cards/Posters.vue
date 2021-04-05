@@ -18,8 +18,11 @@
 </template>
 
 <script>
+import PosterCard from '~/components/cards/PosterCard'
+
 export default {
   name: 'Post',
+  components: { PosterCard },
   props: {
     posters: {
       type: Array,

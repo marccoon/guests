@@ -15,9 +15,9 @@
           ООО "Белпримстрой" / УНП 190133337
         </div>
         <div class="lg:pb-7 pb-4 text-footer text-sm text-center">
-          <a href="https://marccoon.com"
-            >дизайн и разработка сайта marccoon.com</a
-          >
+          <a href="https://marccoon.com">
+            дизайн и разработка сайта marccoon.com
+          </a>
         </div>
       </div>
     </footer>
@@ -26,8 +26,11 @@
 
 <script>
 import Header from '~/components/header/Header'
+import Logo from '~/components/app/Logo'
+import Contacts from '~/pages/contacts'
+import Form from '~/components/form/Form'
 
 export default {
-  components: { Header },
+  components: { Form, Contacts, Logo, Header },
 }
 </script>

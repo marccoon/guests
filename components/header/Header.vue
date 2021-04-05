@@ -82,10 +82,11 @@
 import Logo from '~/components/app/Logo'
 import LangSwitcher from '~/components/header/LangSwitcher'
 import Menu from '~/components/header/Menu'
+import ModalMap from '~/components/app/ModalMap'
 
 export default {
   name: 'Header',
-  components: { Menu, LangSwitcher, Logo },
+  components: { ModalMap, Menu, LangSwitcher, Logo },
   data: () => ({
     menuOpen: false,
   }),

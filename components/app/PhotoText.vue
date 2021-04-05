@@ -6,7 +6,7 @@
       'flex-row-reverse': reverse,
     }"
   >
-    <img class="sm:w-5/12 w-full object-cover" :src="img" />
+    <img class="sm:w-5/12 w-full object-cover" :src="img" alt="" />
     <div class="py-2 sm:w-1/2 w-full flex flex-col justify-center sm:m-0 mt-2">
       <Title v-if="title" :title="title" />
       <p class="md:text-base text-xs text-text" v-html="text"></p>
@@ -23,6 +23,7 @@
 <script>
 import Link from '~/components/app/Link'
 import Title from '~/components/app/Title'
+
 export default {
   name: 'PhotoText',
   components: { Title, Link },

@@ -14,7 +14,10 @@
 </template>
 
 <script>
+import Logo from '~/components/app/Logo'
+
 export default {
   name: 'Footer',
+  components: { Logo },
 }
 </script>
