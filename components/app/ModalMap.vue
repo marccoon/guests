@@ -47,12 +47,12 @@
           />
         </svg>
       </button>
-      <script
-        type="text/javascript"
-        charset="utf-8"
-        async
-        src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A034e22121af666a25de623504f70f8de8771a7ec0a9f415773efc111b85f8d13&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=true"
-      ></script>
+      <iframe
+        src="https://yandex.ru/map-widget/v1/?um=constructor%3A149abdf718b46933b4aa17e29d21b4df9dd3cbe2197c279a4a493d57e5ff480a&amp;source=constructor"
+        width="100%"
+        height="100%"
+        frameborder="0"
+      ></iframe>
     </div>
   </div>
 </template>

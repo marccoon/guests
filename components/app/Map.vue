@@ -10,9 +10,9 @@
       class="absolute top-1/3 left-1/3 bg-contact lg:py-5 sm:pt-3 sm:pb-4 lg:px-9 sm:pl-6 sm:pr-3 lg:max-w-56 sm:max-w-48"
     >
       <div class="relative">
-        <span class="text-contact lg:text-2xl sm:text-xl uppercase">{{
-          $t('contacts.name')
-        }}</span>
+        <span class="text-contact lg:text-2xl sm:text-xl uppercase">
+          {{ $t('contacts.name') }}
+        </span>
         <p class="text-text lg:text-base sm:text-sm lg:mt-3 sm:mt-2">
           {{ $t('contacts.address') }}
         </p>
