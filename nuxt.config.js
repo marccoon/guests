@@ -52,7 +52,7 @@ export default {
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
-    baseURL: 'http://wp.gosti-minsk.by/wp-json/wp/v2/',
+    baseURL: 'https://wp.gosti-minsk.by/wp-json/wp/v2/',
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
