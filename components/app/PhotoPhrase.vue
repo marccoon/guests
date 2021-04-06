@@ -24,14 +24,14 @@
           src="~assets/img/svg/title-icon.svg"
           class="transform rotate-0 sm:rotate-90"
         />
-        <p
+        <div
           class="font-phrase sm:w-full text-base text-phrase xl:text-4xl lg:text-3xl md:text-2xl sm:text-lg md:my-10 my-2 sm:max-w-xl max-w-72 text-center"
           :class="{
             'sm:text-right': reverse,
             'sm:text-left': !reverse,
           }"
           v-html="phrase"
-        ></p>
+        ></div>
         <img
           src="~assets/img/svg/title-icon.svg"
           class="transform rotate-0 sm:rotate-90"

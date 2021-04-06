@@ -3,8 +3,8 @@
     class="lg:py-12 lg:py-10 sm:p-5 px-4 py-4 lg:max-w-sm w-64 border bg-card flex flex-col items-center justify-center"
   >
     <TitleSmall :title="title" />
-    <p class="text-card uppercase mt-8" v-html="date"></p>
-    <p class="mt-3 text-white" v-html="excerpt"></p>
+    <div class="text-card uppercase mt-8" v-html="date"></div>
+    <div class="mt-3 text-white" v-html="excerpt"></div>
     <Button
       class="lg:mt-8 sm:mt-8 mt-6 sm:min-w-xxs sm:w-auto w-full"
       :btn="$t('btns.posterBtn')"
