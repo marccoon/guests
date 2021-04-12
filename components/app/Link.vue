@@ -1,7 +1,7 @@
 <template>
   <n-link
     v-if="linkName"
-    :to="localePath(`/${link}`)"
+    :to="localePath(`${link}`)"
     class="text-link flex items-center w-max hover:text-link-hover transition-all duration-150"
   >
     <span class="uppercase underline lg:text-base text-xs">{{ linkName }}</span>

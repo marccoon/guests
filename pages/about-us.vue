@@ -13,7 +13,6 @@
           :text="$t('aboutUs.text1')"
           link-name=""
           link=""
-          :reverse="false"
         />
       </div>
     </section>
@@ -32,11 +31,7 @@
       </div>
     </section>
     <section class="lg:py-20 sm:py-16 py-10">
-      <PhotoPhrase
-        img="img/img-3.jpg"
-        :phrase="$t('aboutUs.phrase2')"
-        :reverse="false"
-      />
+      <PhotoPhrase img="img/img-3.jpg" :phrase="$t('aboutUs.phrase2')" />
     </section>
     <section class="lg:pt-20 lg:pb-40 sm:pt-16 sm:pb-32 pt-10 pb-20">
       <div class="container">
@@ -45,7 +40,7 @@
           title=""
           :text="$t('aboutUs.text2')"
           :link-name="$t('aboutUs.link1')"
-          link="/"
+          link="/main-menu"
           :reverse="true"
         />
       </div>

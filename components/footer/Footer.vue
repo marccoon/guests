@@ -11,8 +11,9 @@
         Лицензия № 50000/49496 от Регистрация в Торговом реестре - 29.04.2019
       </div>
     </div>
-    <div class="text-footer text-sm text-center">
-      <a href="https://marccoon.com">дизайн и разработка: marccoon.com</a>
+    <div class="text-footer text-sm text-center mt-4">
+      разработка сайта:
+      <a class="underline" href="https://marccoon.com">marccoon.com</a>
     </div>
   </div>
 </template>

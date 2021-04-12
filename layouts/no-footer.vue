@@ -15,9 +15,8 @@
           ООО «Медиа повод» / УНП 193330080
         </div>
         <div class="lg:pb-7 pb-4 text-footer text-sm text-center">
-          <a href="https://marccoon.com">
-            дизайн и разработка сайта marccoon.com
-          </a>
+          разработка сайта:
+          <a class="underline" href="https://marccoon.com">marccoon.com</a>
         </div>
       </div>
     </footer>
