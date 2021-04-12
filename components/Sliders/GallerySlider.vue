@@ -51,6 +51,7 @@ export default {
       keyboard: true,
       speed: 1000,
       slidesPerView: 1,
+      spaceBetween: 30,
     },
   }),
   // components: {Card},

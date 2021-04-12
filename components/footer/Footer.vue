@@ -3,8 +3,12 @@
     <div class="container flex justify-between items-center">
       <Logo />
       <div class="text-footer text-sm text-right">
-        ООО "Белпримстрой" <br />
-        УНП 190133337
+        ООО «Медиа повод»<br />
+        220030, г. Минск. Проспект независимости, 25, помещение 5<br />
+        УНП 193330080<br />
+        Свидетельство о гос.регистрации № 193330080 выдано Мингорисполкомом от
+        21.10.2019 Лицензия № 50000/49496 от Регистрация в Торговом реестре -
+        29.04.2019
       </div>
     </div>
     <div class="text-footer text-sm text-center">

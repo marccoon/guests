@@ -82,12 +82,12 @@
               class="text-contact md:text-base text-xs flex lg:flex-col sm:flex-row flex-col items-center underline lg:mt-5 sm:mt-4 mt-2"
             >
               <a class="lg:mx-0 sm:mx-5">+375 29 6777999</a>
-              <a class="lg:mt-2 lg:mx-0 sm:mx-5 sm:mt-0 mt-1"
-                >+375 17 3277841</a
-              >
-              <a class="lg:mt-2 lg:mx-0 sm:mx-5 sm:mt-0 mt-1"
-                >+375 29 1506508</a
-              >
+              <a class="lg:mt-2 lg:mx-0 sm:mx-5 sm:mt-0 mt-1">
+                +375 17 3277841
+              </a>
+              <a class="lg:mt-2 lg:mx-0 sm:mx-5 sm:mt-0 mt-1">
+                +375 29 1506508
+              </a>
             </div>
           </div>
           <div class="sm:mt-8 mt-4">
@@ -136,19 +136,19 @@ import Form from '~/components/form/Form'
 import PhotoText from '~/components/app/PhotoText'
 import PhotoPhrase from '~/components/app/PhotoPhrase'
 import Title from '~/components/app/Title'
-import PosterSlider from '~/components/Sliders/PosterSlider'
 import GallerySlider from '~/components/Sliders/GallerySlider'
 import Map from '~/components/app/Map'
+import PosterSlider from '~/components/Sliders/PosterSlider'
 
 export default {
   components: {
+    PosterSlider,
     Card,
     SocialIcon,
     Form,
     PhotoText,
     PhotoPhrase,
     Title,
-    PosterSlider,
     GallerySlider,
     Map,
   },
@@ -156,35 +156,14 @@ export default {
     const data = await app.$axios.$get(
       `/pages?lang=${app.i18n.locale}&slug=main`
     )
+    const posterSlides = await app.$axios.$get('/afisha')
+
     const page = data[0]
-    return { page }
+    console.log(page)
+    const gallerySlides = page.ACF.image_gallery.map((image) => {
+      return image.url
+    })
+    return { page, gallerySlides, posterSlides }
   },
-  data: () => ({
-    posterSlides: [
-      {
-        img: 'img/poster-img-1.png',
-        title: 'Happy B-day<br> Нам 8 лет',
-        btn: 'Подробнее',
-        link: '/',
-      },
-      {
-        img: 'img/poster-img-1.png',
-        title: 'Happy B-day<br> Нам 8 лет',
-        btn: 'Подробнее',
-        link: '/',
-      },
-      {
-        img: 'img/poster-img-1.png',
-        title: 'Happy B-day<br> Нам 8 лет',
-        btn: 'Подробнее',
-        link: '/',
-      },
-    ],
-    gallerySlides: [
-      'img/gallery-img-1.png',
-      'img/gallery-img-1.png',
-      'img/gallery-img-1.png',
-    ],
-  }),
 }
 </script>

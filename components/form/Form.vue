@@ -107,14 +107,33 @@ export default {
     success: false,
   }),
   methods: {
-    submitHandler() {
-      // console.log(
-      //   this.personOptions[this.currentPerson],
-      //   this.date,
-      //   this.time,
-      //   this.phone
-      // )
-      this.success = true
+    async submitHandler() {
+      const formData = new FormData()
+      formData.set('person', this.currentPerson)
+      formData.set('date', this.date)
+      formData.set('time', this.time)
+      formData.set('phone', this.phone)
+
+      await this.$axios
+        .$post(
+          'https://wp.gosti-minsk.by/wp-json/contact-form-7/v1/contact-forms/5/feedback',
+          formData
+        )
+        .then((res) => {
+          if (res.invalid_fields) {
+            this.success = true
+            console.log(res.invalid_fields)
+          } else {
+            this.currentPerson = 0
+            this.phone = ''
+            this.date = ''
+            this.time = ''
+            this.success = true
+          }
+        })
+        .catch((e) => {
+          console.log(e)
+        })
     },
   },
 }

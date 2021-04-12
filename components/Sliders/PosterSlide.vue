@@ -4,8 +4,9 @@
 
     <Card
       :title="title"
-      :btn="btn"
-      :link="link"
+      :date="date"
+      :excerpt="excerpt"
+      :btn="$t('btns.posterBtn')"
       class="mx-auto transition-all duration-150 opacity-0 group-hover:opacity-100 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
     />
   </div>
@@ -25,11 +26,15 @@ export default {
       type: String,
       required: true,
     },
+    excerpt: {
+      type: String,
+      required: true,
+    },
     btn: {
       type: String,
       required: true,
     },
-    link: {
+    date: {
       type: String,
       required: true,
     },

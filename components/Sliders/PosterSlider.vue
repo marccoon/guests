@@ -15,10 +15,10 @@
     <Swiper ref="slider" :options="sliderOptions" @slideChange="onSlideChange">
       <SwiperSlide v-for="(slide, index) in slides" :key="index">
         <PosterSlide
-          :img="slide.img"
-          :title="slide.title"
-          :btn="slide.btn"
-          :link="slide.link"
+          :img="slide.featured_image_url"
+          :title="slide.title.rendered"
+          :date="slide.ACF.date"
+          :excerpt="slide.excerpt.rendered"
         />
       </SwiperSlide>
     </Swiper>
@@ -26,8 +26,10 @@
 </template>
 
 <script>
+import PosterSlide from '~/components/Sliders/PosterSlide'
 export default {
   name: 'PosterSlider',
+  components: { PosterSlide },
   props: {
     slides: {
       type: Array,
