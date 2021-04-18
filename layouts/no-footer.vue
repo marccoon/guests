@@ -20,6 +20,8 @@
         </div>
       </div>
     </footer>
+    <ModalMap />
+    <Modal />
   </div>
 </template>
 
@@ -28,8 +30,10 @@ import Header from '~/components/header/Header'
 import Logo from '~/components/app/Logo'
 import Contacts from '~/pages/contacts'
 import Form from '~/components/form/Form'
+import ModalMap from '~/components/app/ModalMap'
+import Modal from '~/components/app/Modal'
 
 export default {
-  components: { Form, Contacts, Logo, Header },
+  components: { Modal, ModalMap, Form, Contacts, Logo, Header },
 }
 </script>

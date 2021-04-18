@@ -32,7 +32,7 @@
         <Card
           :title="$t('mainPage.mainMenuTitle')"
           :btn="$t('mainPage.menuBtn')"
-          link="/main-menu"
+          link="main-menu"
           class="mx-auto"
         />
       </div>
@@ -40,9 +40,9 @@
         class="md:w-1/2 w-full xl:py-56 lg:py-36 md:py-16 sm:py-20 py-16 bg-index-menu-2 bg-cover"
       >
         <Card
-          :title="$t('mainPage.mainMenuTitle')"
+          :title="$t('mainPage.lunchMenuTitle')"
           :btn="$t('mainPage.menuBtn')"
-          link="/lunch-menu"
+          link="lunch-menu"
           class="mx-auto"
         />
       </div>
@@ -130,7 +130,7 @@
 </template>
 
 <script>
-import Card from '@/components/cards/Card'
+import Card from '~/components/cards/Card'
 import SocialIcon from '~/components/app/SocialIcon'
 import Form from '~/components/form/Form'
 import PhotoText from '~/components/app/PhotoText'
@@ -159,7 +159,6 @@ export default {
     const posterSlides = await app.$axios.$get('/afisha')
 
     const page = data[0]
-    console.log(page)
     const gallerySlides = page.ACF.image_gallery.map((image) => {
       return image.url
     })

@@ -59,7 +59,7 @@ module.exports = {
     backgroundColor: (theme) => ({
       ...theme('colors'),
       form: '#0F1D22',
-      card: '#0F1D22',
+      card: 'rgba(15,29,34,0.98)',
       pagination: '#C9AB81',
       contact: '#0F1D22',
       menu: '#0B1315',

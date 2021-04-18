@@ -30,7 +30,7 @@ export default {
   name: 'Map',
   methods: {
     openMap() {
-      this.$store.dispatch('modals/showMap')
+      this.$store.dispatch('showMap')
     },
   },
 }

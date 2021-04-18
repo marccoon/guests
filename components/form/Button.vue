@@ -1,17 +1,9 @@
 <template>
-  <div class="">
-    <n-link
-      v-if="link"
-      :to="localePath(link)"
-      tag="button"
-      class="w-full block uppercase text-btn border border-btn lg:text-base text-sm py-3 px-4 text-center hover:text-btn-hover transition-all duration-150"
-    >
+  <div>
+    <n-link v-if="link" :to="localePath(link)" tag="button" class="btn">
       {{ btn }}
     </n-link>
-    <button
-      v-else
-      class="block w-full uppercase text-btn border border-btn lg:text-base text-sm py-3 px-4 text-center hover:text-btn-hover transition-all duration-150"
-    >
+    <button v-else class="btn">
       {{ btn }}
     </button>
   </div>

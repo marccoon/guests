@@ -47,22 +47,22 @@
           />
         </svg>
       </button>
-      <iframe
-        src="https://yandex.ru/map-widget/v1/?um=constructor%3A149abdf718b46933b4aa17e29d21b4df9dd3cbe2197c279a4a493d57e5ff480a&amp;source=constructor"
-        width="100%"
-        height="100%"
-        frameborder="0"
-      ></iframe>
+      <div class="flex h-full items-center">
+        <Form class="transform sm:translate-y-16 translate-y-1/2" />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import Form from '~/components/form/Form'
+
 export default {
-  name: 'ModalMap',
+  name: 'Modal',
+  components: { Form },
   computed: {
     active() {
-      return this.$store.state.map
+      return this.$store.state.modal
     },
   },
   methods: {

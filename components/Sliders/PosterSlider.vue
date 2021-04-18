@@ -14,7 +14,7 @@
     </button>
     <Swiper ref="slider" :options="sliderOptions" @slideChange="onSlideChange">
       <SwiperSlide v-for="(slide, index) in slides" :key="index">
-        <PosterSlide
+        <PosterCard
           :img="slide.featured_image_url"
           :title="slide.title.rendered"
           :date="slide.ACF.date"
@@ -26,10 +26,11 @@
 </template>
 
 <script>
-import PosterSlide from '~/components/Sliders/PosterSlide'
+import PosterCard from '~/components/cards/PosterCard'
+
 export default {
   name: 'PosterSlider',
-  components: { PosterSlide },
+  components: { PosterCard },
   props: {
     slides: {
       type: Array,
@@ -46,11 +47,11 @@ export default {
       breakpoints: {
         1024: {
           slidesPerView: 2,
-          spaceBetween: 60,
+          spaceBetween: 40,
         },
         1360: {
           slidesPerView: 2,
-          spaceBetween: 100,
+          spaceBetween: 60,
         },
       },
     },

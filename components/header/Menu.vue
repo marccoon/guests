@@ -84,7 +84,12 @@
         </nuxt-link>
       </li>
     </ul>
-    <Button :btn="$t('btns.menuBtn')" class="md:mt-20 mt-10 max-w-64" />
+    <button
+      class="block w-full uppercase text-btn border border-btn lg:text-base text-sm py-3 px-4 text-center hover:text-btn-hover transition-all duration-150 md:mt-20 mt-10 max-w-64"
+      @click.prevent="openModal"
+    >
+      {{ $t('btns.menuBtn') }}
+    </button>
     <!--    <Link-->
     <!--      :linkName="$t('links.menuLink')"-->
     <!--      link="/poster"-->
@@ -94,11 +99,8 @@
 </template>
 
 <script>
-import Button from '~/components/form/Button'
-
 export default {
   name: 'Menu',
-  components: { Button },
   props: {
     active: {
       type: Boolean,
@@ -121,6 +123,11 @@ export default {
   mounted() {
     this.height = this.$refs.submenu.offsetHeight + 'px'
     this.subMenu = false
+  },
+  methods: {
+    openModal() {
+      this.$store.dispatch('showModal')
+    },
   },
 }
 </script>

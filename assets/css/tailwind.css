@@ -1,6 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 @font-face {
   font-family: "OpenSans";
   font-weight: 400;
@@ -23,6 +20,9 @@
   src: url(../fonts/CaviarDreams-Bold.ttf);
 }
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 html, body {
   font-family: "OpenSans";
@@ -30,30 +30,18 @@ html, body {
 * {
   outline: none!important;
 }
-.container {
-  @apply px-4;
-  @screen sm {
-    @apply px-6;
+
+@layer components {
+  .btn {
+    @apply w-full block uppercase text-btn border border-btn lg:text-base text-sm py-3 px-4 text-center hover:text-btn-hover transition-all duration-150
   }
-  @screen lg {
-    @apply px-8;
+  .container {
+    @apply px-4;
+    @screen sm {
+      @apply px-6;
+    }
+    @screen lg {
+      @apply px-8;
+    }
   }
 }
-
-/*@font-face {*/
-/*  font-family: "Roboto";*/
-/*  font-weight: 400;*/
-/*  src: url(../fonts/Roboto-Regular.ttf);*/
-/*}*/
-
-/*@font-face {*/
-/*  font-family: "Roboto";*/
-/*  font-weight: 500;*/
-/*  src: url(../fonts/Roboto-Medium.ttf);*/
-/*}*/
-
-/*@font-face {*/
-/*  font-family: "Roboto";*/
-/*  font-weight: 700;*/
-/*  src: url(../fonts/Roboto-Bold.ttf);*/
-/*}*/

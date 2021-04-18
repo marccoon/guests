@@ -8,6 +8,7 @@
     <Button
       class="lg:mt-10 sm:mt-8 mt-6 sm:min-w-xxs sm:w-auto w-full"
       :btn="btn"
+      :link="link"
     />
   </div>
 </template>
@@ -25,15 +26,19 @@ export default {
     },
     excerpt: {
       type: String,
-      required: true,
+      default: '',
     },
     btn: {
       type: String,
       required: true,
     },
+    link: {
+      type: String,
+      default: '',
+    },
     date: {
       type: String,
-      required: true,
+      default: '',
     },
   },
 }
