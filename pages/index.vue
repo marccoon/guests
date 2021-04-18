@@ -81,13 +81,9 @@
             <div
               class="text-contact md:text-base text-xs flex lg:flex-col sm:flex-row flex-col items-center underline lg:mt-5 sm:mt-4 mt-2"
             >
-              <a class="lg:mx-0 sm:mx-5">+375 29 6777999</a>
-              <a class="lg:mt-2 lg:mx-0 sm:mx-5 sm:mt-0 mt-1">
-                +375 17 3277841
-              </a>
-              <a class="lg:mt-2 lg:mx-0 sm:mx-5 sm:mt-0 mt-1">
-                +375 29 1506508
-              </a>
+              <a class="lg:mx-0 sm:mx-5" href="tel:+375 29 6777999"
+                >+375 29 6777999</a
+              >
             </div>
           </div>
           <div class="sm:mt-8 mt-4">
