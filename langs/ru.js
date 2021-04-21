@@ -46,10 +46,7 @@ export default {
     menuBtn: 'перейти в меню',
     posterTitle: 'Афиша',
     posterText:
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.\n' +
-      'Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus\n' +
-      'mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa\n' +
-      'quis enim.',
+      'Атмосфера грандиозного праздника от лучших кавер-бэндов города ждет вас каждый.',
     galleryTitle: 'Галерея',
   },
   aboutUs: {
