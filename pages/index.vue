@@ -9,7 +9,7 @@
     <section class="lg:pt-40 lg:pb-20 sm:pt-32 sm:pb-16 pt-40 pb-10">
       <div class="container">
         <PhotoText
-          img="img/index-about-img.png"
+          img="img/index-about-img-top.jpg"
           :title="$t('mainPage.aboutUsTitle')"
           :text="page.content.rendered"
           :link-name="$t('mainPage.aboutUsLink')"
@@ -159,6 +159,19 @@ export default {
       return image.url
     })
     return { page, gallerySlides, posterSlides }
+  },
+  head() {
+    return {
+      title: this.page.title.rendered,
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: 'description',
+          name: 'description',
+          content: '',
+        },
+      ],
+    }
   },
 }
 </script>

@@ -8,7 +8,7 @@
     <section class="lg:pt-40 lg:pb-20 sm:pt-32 sm:pb-16 pt-20 pb-10">
       <div class="container">
         <PhotoText
-          img="img/index-about-img.png"
+          img="img/index-about-img-top.jpg"
           title=""
           :text="$t('aboutUs.text1')"
           link-name=""
