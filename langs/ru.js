@@ -36,8 +36,6 @@ export default {
   },
   mainPage: {
     aboutUsTitle: 'О нас',
-    aboutUsText:
-      'Дизайн обновлённого рестопаба «Госцi» выглядит современно и комфортно. Главный акцент сделан на сочетании зелени, дерева и белого света. Так же на первом плане выступает бар с большой барной стойкой, приветствующий гостей и как бы предлагающий своим видом апперитив. Позади него раскрывается просторный зал с мягкими диванами, различной формы столами и шикарными креслами. Каждая деталь помещения располагает к отдыху, даря возможность насладиться роскошными блюдами, а не отвлекая от них.',
     aboutUsLink: 'Узнать больше',
     phrase:
       'Мы гордимся нашей\n' +
@@ -57,23 +55,7 @@ export default {
   aboutUs: {
     aboutUsTitle: 'О нас',
     text1:
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean\n' +
-      'commodo ligula eget dolor. Aenean massa. Cum sociis natoque\n' +
-      'penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n' +
-      'Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.\n' +
-      'Nulla consequat massa quis enim.\n' +
-      '<br>\n' +
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean\n' +
-      'commodo ligula eget dolor. Aenean massa. Cum sociis natoque\n' +
-      'penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n' +
-      'Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.\n' +
-      'Nulla consequat massa quis enim.\n' +
-      '<br>\n' +
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean\n' +
-      'commodo ligula eget dolor. Aenean massa. Cum sociis natoque\n' +
-      'penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n' +
-      'Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.\n' +
-      'Nulla consequat massa quis enim.',
+      'Дизайн обновлённого рестопаба «Госцi» выглядит современно и комфортно. Главный акцент сделан на сочетании зелени, дерева и белого света. Так же на первом плане выступает бар с большой барной стойкой, приветствующий гостей и как бы предлагающий своим видом апперитив. Позади него раскрывается просторный зал с мягкими диванами, различной формы столами и шикарными креслами. Каждая деталь помещения располагает к отдыху, даря возможность насладиться роскошными блюдами, а не отвлекая от них.',
     text2:
       'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean\n' +
       'commodo ligula eget dolor. Aenean massa. Cum sociis natoque\n' +
