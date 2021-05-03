@@ -1,13 +1,13 @@
 <template>
   <div class="relative sm:px-16 px-7">
     <button
-      class="w-4 sm:w-auto next absolute rotate-180 right-0 top-1/2 transform -translate-y-1/2 z-10"
+      class="w-4 md:w-auto next absolute rotate-180 right-0 top-1/2 transform -translate-y-1/2 z-10"
       @click="slider.slideNext()"
     >
       <img src="~assets/img/slider-arrow.svg" alt="" />
     </button>
     <button
-      class="w-4 sm:w-auto prev absolute left-0 top-1/2 transform -translate-y-1/2 z-10"
+      class="w-4 md:w-auto prev absolute left-0 top-1/2 transform -translate-y-1/2 z-10"
       @click="slider.slidePrev()"
     >
       <img src="~assets/img/slider-arrow.svg" alt="" />
@@ -45,13 +45,13 @@ export default {
       slidesPerView: 1,
       spaceBetween: 0,
       breakpoints: {
-        1024: {
+        768: {
           slidesPerView: 2,
           spaceBetween: 40,
         },
         1360: {
-          slidesPerView: 2,
-          spaceBetween: 60,
+          slidesPerView: 3,
+          spaceBetween: 40,
         },
       },
     },
