@@ -1,9 +1,14 @@
 import ru from './langs/ru'
+const isDev = process.env.NODE_ENV !== 'production'
 
 export default {
   server: {
     port: 3080,
   },
+  ...(!isDev && {
+    modern: 'client',
+  }),
+
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'guests',
@@ -12,19 +17,34 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'preconnect',
+        href: 'https://wp.gosti-minsk.by',
+        crossorigin: true,
+      },
+    ],
   },
-
+  vue: {
+    config: {
+      productionTip: false,
+      devtools: true,
+    },
+  },
+  router: {
+    prefetchLinks: false,
+  },
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    { src: './plugins/swiper.js', ssr: false },
+    { src: './plugins/swiper.js', mode: 'client' },
     { src: '~/plugins/vuelidate.js' },
     { src: '~/plugins/clickOutside.js' },
-    { src: '~/plugins/datepicker', ssr: false },
-    { src: '~/plugins/phoneMaskInput', ssr: false },
+    { src: '~/plugins/datepicker', mode: 'client' },
+    { src: '~/plugins/phoneMaskInput', mode: 'client' },
   ],
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)

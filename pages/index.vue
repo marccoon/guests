@@ -162,15 +162,14 @@ export default {
   },
   head() {
     return {
-      title: this.page.title.rendered,
-      meta: [
-        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-        {
-          hid: 'description',
-          name: 'description',
-          content: '',
-        },
-      ],
+      title: this.page.yoast_title,
+      meta: this.page.yoast_meta.map((meta) => {
+        meta.content = meta.content.replace(
+          'wp.gosti-minsk.by',
+          'gosti-minsk.by'
+        )
+        return meta
+      }),
     }
   },
 }

@@ -30,6 +30,18 @@ export default {
     const images = report.ACF.photos
     return { report, images }
   },
+  head() {
+    return {
+      title: this.report.yoast_title,
+      meta: this.report.yoast_meta.map((meta) => {
+        meta.content = meta.content.replace(
+          'wp.gosti-minsk.by',
+          'gosti-minsk.by'
+        )
+        return meta
+      }),
+    }
+  },
 }
 </script>
 
