@@ -87,7 +87,7 @@ module.exports = {
         'index-menu-2': "url('~assets/img/menu-img-2.png')",
         'about-bg': "url('~assets/img/about-bg.png')",
         'main-menu': "url('~assets/img/menu-bg-1.png')",
-        line: "url('~assets/img/menu-line.png')",
+        line: "url('~assets/img/menu-line.svg')",
         lunch: "url('~assets/img/lunch-bg.png')",
       }),
       height: {
@@ -117,5 +117,8 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+    require('tailwind-scrollbar-hide'),
+  ],
 }
