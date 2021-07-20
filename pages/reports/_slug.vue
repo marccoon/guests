@@ -2,15 +2,40 @@
   <div class="bg-bg bg-repeat-y bg-100% bg-center pt-4 lg:pb-40 sm:pb-32 pb-20">
     <div class="container relative">
       <SocialIcon class="ml-auto mr-0" />
+      <div
+        v-if="linked_event"
+        class="
+          font-title font-bold
+          xl:text-3xl
+          md:text-2xl
+          sm:text-xl
+          text-title
+          lg:mt-24
+          sm:mt-16
+          mt-12
+          uppercase
+          text-center
+        "
+      >
+        {{ linked_event.post_title }}
+      </div>
       <Title
         :title="report.title.rendered"
-        class="lg:mt-24 sm:my-16 mt-12 mx-auto"
+        class="lg:mt-8 sm:mt-6 mt-4 mx-auto"
       />
       <div
-        class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 xl:gap-10 lg:gap-6 gap-5"
+        class="
+          grid
+          lg:grid-cols-3
+          sm:grid-cols-2
+          grid-cols-1
+          xl:gap-10
+          lg:gap-6
+          gap-5
+        "
       >
-        <div v-for="(img, index) in images" :key="index">
-          <img :src="img.url" class="mx-auto" />
+        <div v-for="(photo, index) in photos" :key="index">
+          <img :src="photo.url" class="mx-auto" alt="" />
         </div>
       </div>
     </div>
@@ -27,8 +52,10 @@ export default {
   async asyncData({ $axios, route }) {
     const data = await $axios.$get(`/report?slug=${route.params.slug}`)
     const report = data[0]
-    const images = report.ACF.photos
-    return { report, images }
+    console.log(report)
+    // eslint-disable-next-line camelcase
+    const { photos, linked_event } = report.ACF
+    return { report, photos, linked_event }
   },
   head() {
     return {
