@@ -25,17 +25,20 @@
       />
       <div
         class="
-          grid
-          lg:grid-cols-3
-          sm:grid-cols-2
-          grid-cols-1
-          xl:gap-10
-          lg:gap-6
-          gap-5
+          col-count-2
+          md:col-count-3
+          gap-4
+          md:gap-6
+          before:box-inherit
+          after:box-inherit
         "
       >
-        <div v-for="(photo, index) in photos" :key="index">
-          <img :src="photo.url" class="mx-auto" alt="" />
+        <div
+          v-for="(photo, index) in photos"
+          :key="index"
+          class="break-inside mb-6"
+        >
+          <img :src="photo.url" alt="" />
         </div>
       </div>
     </div>
@@ -52,7 +55,6 @@ export default {
   async asyncData({ $axios, route }) {
     const data = await $axios.$get(`/report?slug=${route.params.slug}`)
     const report = data[0]
-    console.log(report)
     // eslint-disable-next-line camelcase
     const { photos, linked_event } = report.ACF
     return { report, photos, linked_event }
