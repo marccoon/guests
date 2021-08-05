@@ -38,7 +38,15 @@
           :key="index"
           class="break-inside mb-6"
         >
-          <img :src="photo.url" alt="" />
+          <img
+            :src="photo.url"
+            :srcset="`
+              ${photo.sizes.thumbnail} 320px,
+              ${photo.sizes.medium} 768px,
+              ${photo.sizes.large}
+            `"
+            alt=""
+          />
         </div>
       </div>
     </div>
