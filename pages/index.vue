@@ -27,7 +27,16 @@
     </section>
     <section class="flex flex-wrap">
       <div
-        class="md:w-1/2 w-full xl:py-56 lg:py-36 md:py-16 sm:py-20 py-16 bg-index-menu-1 bg-cover"
+        class="
+          md:w-1/2
+          w-full
+          xl:py-56
+          lg:py-36
+          md:py-16
+          sm:py-20
+          py-16
+          bg-index-menu-1 bg-cover
+        "
       >
         <Card
           :title="$t('mainPage.mainMenuTitle')"
@@ -37,7 +46,16 @@
         />
       </div>
       <div
-        class="md:w-1/2 w-full xl:py-56 lg:py-36 md:py-16 sm:py-20 py-16 bg-index-menu-2 bg-cover"
+        class="
+          md:w-1/2
+          w-full
+          xl:py-56
+          lg:py-36
+          md:py-16
+          sm:py-20
+          py-16
+          bg-index-menu-2 bg-cover
+        "
       >
         <Card
           :title="$t('mainPage.lunchMenuTitle')"
@@ -57,6 +75,11 @@
         </div>
         <client-only>
           <PosterSlider :slides="posterSlides" class="lg:mt-24 sm:mt-16 mt-8" />
+          <Button
+            :btn="$t('gallery.btn')"
+            link="poster"
+            class="block lg:mt-16 sm:mt-12 mt-8 mx-auto w-max"
+          />
         </client-only>
       </div>
     </section>
@@ -70,7 +93,15 @@
     </section>
     <section class="flex flex-wrap">
       <div
-        class="lg:w-1/2 w-full bg-contact flex justify-center items-center py-10"
+        class="
+          lg:w-1/2
+          w-full
+          bg-contact
+          flex
+          justify-center
+          items-center
+          py-10
+        "
       >
         <div class="flex flex-col items-center">
           <Title :title="$t('contacts.title')" class="mx-auto block" />
@@ -79,7 +110,20 @@
               {{ $t('contacts.address') }}
             </div>
             <div
-              class="text-contact md:text-base text-xs flex lg:flex-col sm:flex-row flex-col items-center underline lg:mt-5 sm:mt-4 mt-2"
+              class="
+                text-contact
+                md:text-base
+                text-xs
+                flex
+                lg:flex-col
+                sm:flex-row
+                flex-col
+                items-center
+                underline
+                lg:mt-5
+                sm:mt-4
+                mt-2
+              "
             >
               <a class="lg:mx-0 sm:mx-5" href="tel:+375 29 6777999"
                 >+375 29 6777999</a
@@ -91,7 +135,18 @@
               {{ $t('contacts.timeTitle') }}
             </div>
             <div
-              class="text-contact md:text-base text-xs lg:mt-5 sm:mt-4 mt-2 flex lg:flex-col sm:flex-row flex-col"
+              class="
+                text-contact
+                md:text-base
+                text-xs
+                lg:mt-5
+                sm:mt-4
+                mt-2
+                flex
+                lg:flex-col
+                sm:flex-row
+                flex-col
+              "
             >
               <div class="flex justify-end lg:mx-0 sm:mx-5">
                 <div class="text-right sm:mr-5 mr-3">
@@ -135,9 +190,11 @@ import Title from '~/components/app/Title'
 import GallerySlider from '~/components/Sliders/GallerySlider'
 import Map from '~/components/app/Map'
 import PosterSlider from '~/components/Sliders/PosterSlider'
+import Button from '~/components/form/Button'
 
 export default {
   components: {
+    Button,
     PosterSlider,
     Card,
     SocialIcon,
@@ -152,7 +209,7 @@ export default {
     const data = await app.$axios.$get(
       `/pages?lang=${app.i18n.locale}&slug=main`
     )
-    const posterSlides = await app.$axios.$get('/afisha')
+    const posterSlides = await app.$axios.$get('/afisha?per_page=7')
 
     const page = data[0]
     const gallerySlides = page.ACF.image_gallery.map((image) => {
