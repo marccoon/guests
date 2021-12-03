@@ -3,10 +3,43 @@
     <section class="bg-index bg-cover bg-center lg:h-144 sm:h-96 h-80 py-4">
       <div class="container h-full flex flex-col justify-between">
         <SocialIcon class="ml-auto mr-0" />
-        <Form class="transform sm:translate-y-16 translate-y-1/2" />
+        <div>
+          <div class="invisible md:visible grid grid-cols-3 gap-4 -mb-10">
+            <div class="flex items-center bg-form text-white py-4 px-6">
+              <TitleSmall to="/novyj-god" tag="h4" title="Новый год" />
+            </div>
+            <div class="flex items-center bg-form text-white py-4 px-6">
+              <TitleSmall to="korporativ" tag="h4" title="Корпоратив" />
+            </div>
+            <div class="flex items-center bg-form text-white py-4 px-6">
+              <TitleSmall to="/den-rozhdeniya" tag="h4" title="День рождения" />
+            </div>
+          </div>
+          <Form class="transform sm:translate-y-16 translate-y-1/2" />
+        </div>
       </div>
     </section>
-    <section class="lg:pt-40 lg:pb-20 sm:pt-32 sm:pb-16 pt-40 pb-10">
+
+    <section class="lg:pt-32 sm:pt-24 pt-48">
+      <div class="container">
+        <div class="visible md:invisible grid grid-rows-3 gap-4 -mb-10">
+          <div class="flex items-center bg-form text-white py-4 px-6">
+            <TitleSmall to="/novyj-god" tag="h4" title="Новый год" />
+          </div>
+          <div class="flex items-center bg-form text-white py-4 px-6">
+            <TitleSmall
+              to="/novyj-god-v-karaoke"
+              tag="h4"
+              title="Новый год в караоке"
+            />
+          </div>
+          <div class="flex items-center bg-form text-white py-4 px-6">
+            <TitleSmall to="korporativ" tag="h4" title="Корпоратив" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="lg:pt-32 lg:pb-20 sm:pt-24 sm:pb-16 pt-20 pb-10">
       <div class="container">
         <PhotoText
           img="img/index-about-img-top.jpg"
@@ -191,9 +224,11 @@ import GallerySlider from '~/components/Sliders/GallerySlider'
 import Map from '~/components/app/Map'
 import PosterSlider from '~/components/Sliders/PosterSlider'
 import Button from '~/components/form/Button'
+import TitleSmall from '~/components/app/TitleSmall'
 
 export default {
   components: {
+    TitleSmall,
     Button,
     PosterSlider,
     Card,

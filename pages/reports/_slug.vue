@@ -60,17 +60,21 @@ import Title from '~/components/app/Title'
 export default {
   components: { Title, SocialIcon },
   layout: 'no-footer',
-  async asyncData({ $axios, route }) {
-    const data = await $axios.$get(`/report?slug=${route.params.slug}`)
-    const report = data[0]
-    // eslint-disable-next-line camelcase
-    const { photos, linked_event } = report.ACF
-    return { report, photos, linked_event }
+  async asyncData({ $axios, params, error }) {
+    try {
+      const data = await $axios.$get(`/report?slug=${params.slug}`)
+      const report = data[0]
+      // eslint-disable-next-line camelcase
+      const { photos, linked_event } = report.ACF
+      return { report, photos, linked_event }
+    } catch (e) {
+      return error(e)
+    }
   },
   head() {
     return {
-      title: this.report.yoast_title,
-      meta: this.report.yoast_meta.map((meta) => {
+      title: this.report?.yoast_title,
+      meta: this.report?.yoast_meta.map((meta) => {
         meta.content = meta.content.replace(
           'wp.gosti-minsk.by',
           'gosti-minsk.by'
