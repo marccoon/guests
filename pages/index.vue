@@ -27,14 +27,10 @@
             <TitleSmall to="/novyj-god" tag="h4" title="Новый год" />
           </div>
           <div class="flex items-center bg-form text-white py-4 px-6">
-            <TitleSmall
-              to="/novyj-god-v-karaoke"
-              tag="h4"
-              title="Новый год в караоке"
-            />
+            <TitleSmall to="korporativ" tag="h4" title="Корпоратив" />
           </div>
           <div class="flex items-center bg-form text-white py-4 px-6">
-            <TitleSmall to="korporativ" tag="h4" title="Корпоратив" />
+            <TitleSmall to="/den-rozhdeniya" tag="h4" title="День рождения" />
           </div>
         </div>
       </div>
