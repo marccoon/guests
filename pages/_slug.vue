@@ -1,6 +1,14 @@
 <template>
   <div class="bg-bg bg-repeat-y bg-100% bg-center">
-    <section class="md:h-96 h-56 bg-about-bg bg-cover bg-center">
+    <section
+      class="md:h-96 h-56 bg-cover bg-center"
+      :class="{ 'bg-about-bg': !page.featured_image_url }"
+      :style="
+        page.featured_image_url
+          ? `background-image: url(${page.featured_image_url})`
+          : ''
+      "
+    >
       <div class="container flex items-center justify-center h-full">
         <Title :title="page.title.rendered" />
       </div>
