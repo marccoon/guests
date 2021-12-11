@@ -20,7 +20,7 @@
       </div>
     </section>
 
-    <section class="visible md:invisible lg:pt-32 sm:pt-24 pt-48">
+    <section class="hidden md:block lg:pt-32 sm:pt-24 pt-48">
       <div class="container">
         <div class="grid grid-rows-3 gap-4 -mb-10">
           <div class="flex items-center bg-form text-white py-4 px-6">
