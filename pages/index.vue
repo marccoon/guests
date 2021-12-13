@@ -4,7 +4,7 @@
       <div class="container h-full flex flex-col justify-between">
         <SocialIcon class="ml-auto mr-0" />
         <div>
-          <div class="hidden md:block grid grid-cols-3 gap-4 -mb-10">
+          <div class="hidden md:grid grid-cols-3 gap-4 -mb-10">
             <div class="flex items-center bg-form text-white py-4 px-6">
               <TitleSmall to="/novyj-god" tag="h4" title="Новый год" />
             </div>
