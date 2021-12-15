@@ -10,13 +10,27 @@
         <div class="md:w-1/4 w-full md:pr-4">
           <ul
             ref="menu-list"
-            class="md:block overflow-y-scroll scrollbar-hide flex flex-nowrap w-full items-center gap-4"
+            class="
+              md:block
+              overflow-y-scroll
+              scrollbar-hide
+              flex flex-nowrap
+              w-full
+              items-center
+              gap-4
+            "
           >
             <li
               v-for="(item, index) in menu"
               :key="index"
               ref="menu-tab"
-              class="uppercase md:mb-5 flex-shrink-0 text-category cursor-pointer"
+              class="
+                uppercase
+                md:mb-5
+                flex-shrink-0
+                text-category
+                cursor-pointer
+              "
               :class="{
                 'text-category lg:text-base text-xs': activeTab !== index,
                 'text-category-active lg:text-lg md:text-sm text-xs':
@@ -29,7 +43,20 @@
           </ul>
         </div>
         <div
-          class="md:w-3/4 w-full grid md:grid-cols-2 gap-4 bg-dishes xl:px-16 lg:px-12 md:px-6 px-4 md:mt-0 mt-8"
+          class="
+            md:w-3/4
+            w-full
+            grid
+            md:grid-cols-2
+            gap-4
+            bg-dishes
+            xl:px-16
+            lg:px-12
+            md:px-6
+            px-4
+            md:mt-0
+            mt-8
+          "
         >
           <div v-for="(item, index) in dishes" :key="index">
             <MenuItem
@@ -63,7 +90,7 @@ export default {
   layout: 'no-footer',
   async asyncData({ app }) {
     const data = await app.$axios.$get(
-      `/pages?lang=${app.i18n.locale}&slug=main-menu`
+      `/api/pages?lang=${app.i18n.locale}&slug=main-menu`
     )
     const menu = data[0].ACF.group
     return { menu }

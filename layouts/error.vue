@@ -11,8 +11,8 @@ export default {
   name: 'Error',
   props: {
     error: {
-      type: [String, Number],
-      default: 404,
+      type: Object,
+      default: () => {},
     },
   },
 }

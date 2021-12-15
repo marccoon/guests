@@ -100,6 +100,19 @@ export default {
         href: 'https://wp.gosti-minsk.by',
         crossorigin: true,
       },
+      {
+        rel: 'preconnect',
+        href: 'https://fonts.googleapis.com',
+      },
+      {
+        rel: 'preconnect',
+        href: 'https://fonts.gstatic.com',
+        crossorigin: true,
+      },
+      {
+        rel: 'dns-prefetch',
+        href: 'https://wp.gosti-minsk.by',
+      },
     ],
   },
   vue: {
@@ -108,9 +121,7 @@ export default {
       devtools: true,
     },
   },
-  router: {
-    prefetchLinks: false,
-  },
+
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [],
 
@@ -159,7 +170,13 @@ export default {
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
-    baseURL: 'https://wp.gosti-minsk.by/wp-json/wp/v2/',
+    proxy: true, // Can be also an object with default options
+  },
+  proxy: {
+    '/api/': {
+      target: 'https://wp.gosti-minsk.by/wp-json/wp/v2',
+      pathRewrite: { '^/api/': '' },
+    },
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)

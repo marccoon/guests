@@ -238,7 +238,7 @@ export default {
   },
   async asyncData({ app }) {
     const data = await app.$axios.$get(
-      `/pages?lang=${app.i18n.locale}&slug=main`
+      `/api/pages?lang=${app.i18n.locale}&slug=main`
     )
 
     const page = data[0]
@@ -265,7 +265,7 @@ export default {
     }
   },
   async mounted() {
-    this.posterSlides = await this.$axios.$get('/afisha?per_page=7')
+    this.posterSlides = await this.$axios.$get('/api/afisha?per_page=7')
   },
 }
 </script>

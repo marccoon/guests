@@ -21,7 +21,7 @@ export default {
   components: { SocialIcon, Title, Posters },
   layout: 'no-footer',
   async asyncData({ app }) {
-    const posters = await app.$axios.$get('/afisha')
+    const posters = await app.$axios.$get('/api/afisha')
     // console.log(posters)
     return { posters }
   },

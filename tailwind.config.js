@@ -23,9 +23,9 @@ module.exports = {
       xl: '1360px',
     },
     fontFamily: {
-      title: ['CaviarDreams'],
-      phrase: ['CaviarDreams'],
-      body: ['OpenSans'],
+      title: ['Caviar Dreams'],
+      phrase: ['Caviar Dreams'],
+      body: ['Open Sans'],
     },
     borderColor: (theme) => ({
       ...theme('colors'),
@@ -80,7 +80,7 @@ module.exports = {
         arrow: '#C9AB81',
         arrowHover: '#fff',
       },
-      backgroundImage: (theme) => ({
+      backgroundImage: () => ({
         bg: "url('~assets/img/bg-body.png')",
         index: "url('~assets/img/index-bg.png')",
         'index-menu-1': "url('~assets/img/menu-img-1.png')",

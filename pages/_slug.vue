@@ -30,7 +30,7 @@ export default {
   components: { Title },
   async asyncData({ $axios, params, error }) {
     try {
-      const data = await $axios.$get(`/pages?slug=${params.slug}`)
+      const data = await $axios.$get(`/api/pages?slug=${params.slug}`)
       const page = data[0]
       // eslint-disable-next-line camelcase
       return { page }

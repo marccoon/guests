@@ -62,7 +62,7 @@ export default {
   layout: 'no-footer',
   async asyncData({ $axios, params, error }) {
     try {
-      const data = await $axios.$get(`/report?slug=${params.slug}`)
+      const data = await $axios.$get(`/api/report?slug=${params.slug}`)
       const report = data[0]
       // eslint-disable-next-line camelcase
       const { photos, linked_event } = report.ACF
