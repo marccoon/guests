@@ -1,7 +1,20 @@
 <template>
   <div
-    class="bg-black flex items-center justify-center fixed left-0 right-0 top-0 bottom-0 z-50 transition-opacity duration-500"
-    :class="{ 'pointer-events-none opacity-0': !active }"
+    v-if="active"
+    class="
+      bg-black
+      flex
+      items-center
+      justify-center
+      fixed
+      left-0
+      right-0
+      top-0
+      bottom-0
+      z-50
+      transition-opacity
+      duration-500
+    "
     @click.self="close"
   >
     <div class="container h-4/5">
@@ -67,7 +80,7 @@ export default {
   },
   methods: {
     close() {
-      this.$store.dispatch('hideModal')
+      this.$store.dispatch('hideMap')
     },
   },
 }

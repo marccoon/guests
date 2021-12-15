@@ -1,8 +1,10 @@
 <template>
-  <div class="relative">
-    <header class="bg-bg bg-repeat-y bg-100% bg-center relative z-20">
+  <div v-click-outside="closeMenu" class="relative">
+    <header
+      class="bg-bg bg-repeat-y py-3 sm:py-0 bg-100% bg-center relative z-20"
+    >
       <div class="container relative flex justify-between items-center z-20">
-        <div @click="menuOpen = !menuOpen">
+        <div @click.stop="menuOpen = !menuOpen">
           <div class="w-16 h-8 flex justify-center items-center">
             <button>
               <svg
@@ -70,14 +72,18 @@
     </header>
     <div
       ref="menu"
-      class="absolute container h-full left-1/2 top-0 transform -translate-x-1/2 z-10"
+      class="
+        absolute
+        container
+        h-full
+        left-1/2
+        top-0
+        transform
+        -translate-x-1/2
+        z-10
+      "
     >
-      <Menu
-        v-if="menuOpen"
-        v-click-outside="closeMenu"
-        :active="menuOpen"
-        @closeMenu="closeMenu"
-      />
+      <Menu v-if="menuOpen" :active="menuOpen" @closeMenu="closeMenu" />
     </div>
   </div>
 </template>
