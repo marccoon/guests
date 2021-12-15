@@ -8,12 +8,13 @@
           ? `background-image: url(${page.featured_image_url})`
           : ''
       "
-    >
-      <div class="container flex items-center justify-center h-full">
-        <Title :title="page.title.rendered" />
+    ></section>
+    <section class="lg:pt-32 sm:pt-24 pt-16">
+      <div class="container flex items-center justify-center">
+        <Title class="drop-shadow-xl" :title="page.title.rendered" />
       </div>
     </section>
-    <section class="lg:pt-40 lg:pb-20 sm:pt-32 sm:pb-16 pt-20 pb-10">
+    <section class="lg:pt-16 lg:pb-20 sm:pt-10 sm:pb-16 pt-12 pb-10">
       <div class="container">
         <div class="prose text-white" v-html="page.content.rendered" />
       </div>

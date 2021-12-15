@@ -114,6 +114,11 @@ export default {
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [],
 
+  loading: {
+    color: 'rgb(201, 171, 129)',
+    height: '2px',
+  },
+
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     { src: './plugins/swiper.js', mode: 'client' },
@@ -158,5 +163,46 @@ export default {
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {},
+  build: {
+    optimizeCss: true,
+    ...(!isDev && {
+      html: {
+        minify: {
+          collapseBooleanAttributes: true,
+          decodeEntities: true,
+          minifyCSS: true,
+          minifyJS: true,
+          processConditionalComments: true,
+          removeEmptyAttributes: true,
+          removeRedundantAttributes: true,
+          trimCustomFragments: true,
+          useShortDoctype: true,
+        },
+      },
+    }),
+    splitChunks: {
+      layouts: true,
+      pages: true,
+      commons: true,
+    },
+    optimization: {
+      minimize: !isDev,
+    },
+    ...(!isDev && {
+      extractCSS: {
+        ignoreOrder: true,
+      },
+    }),
+    // parallel: true
+    // cache: true
+  },
+  render: {
+    http2: {
+      push: true,
+      pushAssets: (req, res, publicPath, preloadFiles) =>
+        preloadFiles.map(
+          (f) => `<${publicPath}${f.file}>; rel=preload; as=${f.asType}`
+        ),
+    },
+  },
 }

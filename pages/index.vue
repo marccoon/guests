@@ -240,13 +240,17 @@ export default {
     const data = await app.$axios.$get(
       `/pages?lang=${app.i18n.locale}&slug=main`
     )
-    const posterSlides = await app.$axios.$get('/afisha?per_page=7')
 
     const page = data[0]
     const gallerySlides = page.ACF.image_gallery.map((image) => {
       return image.url
     })
-    return { page, gallerySlides, posterSlides }
+    return { page, gallerySlides }
+  },
+  data() {
+    return {
+      posterSlides: [],
+    }
   },
   head() {
     return {
@@ -259,6 +263,9 @@ export default {
         return meta
       }),
     }
+  },
+  async mounted() {
+    this.posterSlides = await this.$axios.$get('/afisha?per_page=7')
   },
 }
 </script>
