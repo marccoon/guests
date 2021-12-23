@@ -7,7 +7,8 @@
       @click="openMap"
     />
     <div
-      class="absolute top-1/3 left-1/3 bg-contact lg:py-5 sm:pt-3 sm:pb-4 lg:px-9 sm:pl-6 sm:pr-3 lg:max-w-56 sm:max-w-48"
+      class="absolute bg-contact pt-4 pb-5 pl-7 pr-5 max-w-56"
+      style="transform: translate3d(0, -100%, 0px); top: 55%; left: 45%"
     >
       <div class="relative">
         <span class="text-contact lg:text-2xl sm:text-xl uppercase">
@@ -19,6 +20,7 @@
         <img
           src="~assets/img/location.svg"
           class="absolute -left-12 -bottom-5"
+          alt=""
         />
       </div>
     </div>

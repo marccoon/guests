@@ -1,6 +1,18 @@
 <template>
   <div
-    class="lg:py-12 lg:px-4 sm:py-8 px-2 py-4 lg:max-w-xs sm:max-w-64 max-w-48 border bg-card flex flex-col items-center"
+    class="
+      lg:py-12 lg:px-4
+      sm:py-8
+      px-2
+      py-4
+      lg:max-w-xs
+      sm:max-w-64
+      max-w-48
+      border
+      bg-card
+      flex flex-col
+      items-center
+    "
   >
     <TitleSmall :title="title" />
     <div class="text-card uppercase mt-8" v-html="date"></div>
