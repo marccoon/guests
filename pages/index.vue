@@ -4,15 +4,21 @@
       <div class="container h-full flex flex-col justify-between">
         <SocialIcon class="ml-auto mr-0" />
         <div>
-          <div class="hidden md:grid grid-cols-3 gap-4 -mb-10">
-            <div class="flex items-center bg-form text-white py-4 px-6">
-              <TitleSmall to="/novyj-god" tag="h4" title="Новый год" />
-            </div>
-            <div class="flex items-center bg-form text-white py-4 px-6">
-              <TitleSmall to="korporativ" tag="h4" title="Корпоратив" />
-            </div>
-            <div class="flex items-center bg-form text-white py-4 px-6">
-              <TitleSmall to="/den-rozhdeniya" tag="h4" title="День рождения" />
+          <div
+            v-if="reserveTabs"
+            class="hidden md:flex justify-center gap-4 -mb-10"
+          >
+            <div
+              v-for="tab in reserveTabs"
+              :key="tab.url"
+              class="flex items-center bg-form text-white w-1/3 py-4 px-6"
+            >
+              <TitleSmall
+                :href="tab.url"
+                tag="a"
+                class="lg:text-lg sm:text-md"
+                :title="tab.name"
+              />
             </div>
           </div>
           <Form class="transform sm:translate-y-16 translate-y-1/2" />
@@ -20,17 +26,20 @@
       </div>
     </section>
 
-    <section class="md:hidden lg:pt-32 sm:pt-24 pt-32">
+    <section v-if="reserveTabs" class="md:hidden lg:pt-32 sm:pt-24 pt-32">
       <div class="container">
-        <div class="grid grid-rows-3 gap-4 -mb-10">
-          <div class="flex items-center bg-form text-white py-4 px-6">
-            <TitleSmall to="/novyj-god" tag="h4" title="Новый год" />
-          </div>
-          <div class="flex items-center bg-form text-white py-4 px-6">
-            <TitleSmall to="korporativ" tag="h4" title="Корпоратив" />
-          </div>
-          <div class="flex items-center bg-form text-white py-4 px-6">
-            <TitleSmall to="/den-rozhdeniya" tag="h4" title="День рождения" />
+        <div class="flex flex-col gap-4">
+          <div
+            v-for="tab in reserveTabs"
+            :key="tab.url"
+            class="flex items-center bg-form text-white py-4 px-6"
+          >
+            <TitleSmall
+              :href="tab.url"
+              tag="a"
+              class="lg:text-lg sm:text-md"
+              :title="tab.name"
+            />
           </div>
         </div>
       </div>
@@ -177,10 +186,12 @@ export default {
     )
 
     const page = data[0]
-    const gallerySlides = page.ACF.image_gallery.map((image) => {
+    const gallerySlides = page.acf.image_gallery.map((image) => {
       return image.url
     })
-    return { page, gallerySlides }
+    const reserveTabs = page.acf.reserve_tabs
+
+    return { page, gallerySlides, reserveTabs }
   },
   data() {
     return {

@@ -4,6 +4,7 @@
     <component
       :is="to ? 'nuxt-link' : tag"
       :to="to"
+      v-bind="$attrs"
       class="text-title uppercase text-center"
       :class="{
         'lg:text-2xl sm:text-xl': tag === 'h2',
