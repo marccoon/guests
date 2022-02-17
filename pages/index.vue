@@ -103,7 +103,10 @@
         />
       </div>
     </section>
-    <section class="lg:pt-40 lg:pb-20 sm:pt-32 sm:pb-16 pt-20 pb-10">
+    <section
+      v-if="posterSlides.length"
+      class="lg:pt-40 lg:pb-20 sm:pt-32 sm:pb-16 pt-20 pb-10"
+    >
       <div class="container">
         <div class="text-center xl:w-3/5 lg:w-4/5 mx-auto">
           <Title :title="$t('mainPage.posterTitle')" class="mx-auto block" />
