@@ -1,4 +1,5 @@
 import ru from './langs/ru'
+import en from './langs/en'
 const isDev = process.env.NODE_ENV !== 'production'
 
 export default {
@@ -153,11 +154,12 @@ export default {
   ],
 
   i18n: {
-    locales: ['ru'],
+    locales: ['ru', 'en'],
     defaultLocale: 'ru',
     vueI18n: {
       messages: {
         ru,
+        en,
       },
     },
   },

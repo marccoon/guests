@@ -11,7 +11,7 @@ export default {
   links: {
     menuLink: 'Новогодние корпоративы',
   },
-  btns: {
+  buttons: {
     menuBtn: 'Забронировать стол',
     posterBtn: 'Забронировать',
   },

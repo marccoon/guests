@@ -1,6 +1,25 @@
 <template>
   <menu
-    class="absolute left-0 bg-menu transform transition-all duration-750 lg:px-8 sm:px-6 px-4 md:pt-10 ot-5 md:pb-40 pb-20 xl:w-1/3 lg:w-2/5 sm:w-1/2 w-full m-0"
+    class="
+      absolute
+      left-0
+      bg-menu
+      transform
+      transition-all
+      duration-750
+      lg:px-8
+      sm:px-6
+      px-4
+      md:pt-10
+      ot-5
+      md:pb-40
+      pb-20
+      xl:w-1/3
+      lg:w-2/5
+      sm:w-1/2
+      w-full
+      m-0
+    "
     :class="{
       'top-full translate-y-0': active,
       'top-0 -translate-y-full': !active,
@@ -42,7 +61,7 @@
         >
           <li class="mt-6">
             <nuxt-link
-              :to="localePath('/main-menu')"
+              :to="localePath('/menu/main')"
               @click.native="$emit('closeMenu')"
             >
               {{ $t('navigation.item3') }}
@@ -51,7 +70,7 @@
 
           <li class="mt-4">
             <nuxt-link
-              :to="localePath('/lunch-menu')"
+              :to="localePath('/menu/lunch')"
               @click.native="$emit('closeMenu')"
             >
               {{ $t('navigation.item4') }}
@@ -85,10 +104,27 @@
       </li>
     </ul>
     <button
-      class="block w-full uppercase text-btn border border-btn lg:text-base text-sm py-3 px-4 text-center hover:text-btn-hover transition-all duration-150 md:mt-20 mt-10 max-w-64"
+      class="
+        block
+        w-full
+        uppercase
+        text-btn
+        border border-btn
+        lg:text-base
+        text-sm
+        py-3
+        px-4
+        text-center
+        hover:text-btn-hover
+        transition-all
+        duration-150
+        md:mt-20
+        mt-10
+        max-w-64
+      "
       @click.prevent="openModal"
     >
-      {{ $t('btns.menuBtn') }}
+      {{ $t('buttons.menuBtn') }}
     </button>
     <!--    <Link-->
     <!--      :linkName="$t('links.menuLink')"-->

@@ -40,7 +40,7 @@
           title=""
           :text="$t('aboutUs.text2')"
           :link-name="$t('aboutUs.link1')"
-          link="/main-menu"
+          link="/menu/main"
           :reverse="true"
         />
       </div>

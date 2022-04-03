@@ -1,8 +1,8 @@
 <template>
   <div class="bg-bg bg-repeat-y bg-100% bg-center">
-    <section class="md:h-96 h-56 bg-main-menu bg-cover bg-center">
+    <section class="md:h-96 h-56 bg-lunch bg-cover bg-center">
       <div class="container flex items-center justify-center h-full">
-        <Title :title="$t('mainMenu.title')" />
+        <Title :title="$t('lunchMenu.title')" />
       </div>
     </section>
     <section class="lg:py-40 sm:py-32 py-20">
@@ -69,12 +69,14 @@
         </div>
       </div>
     </section>
-    <section class="bg-lunch bg-cover bg-center w-full xl:py-40 md:py-24 py-20">
+    <section
+      class="bg-main-menu bg-cover bg-center w-full xl:py-40 md:py-24 py-20"
+    >
       <div class="container flex justify-center">
         <Card
-          :title="$t('mainMenu.cardTitle')"
-          :btn="$t('mainMenu.btn')"
-          link="/lunch-menu"
+          :title="$t('lunchMenu.cardTitle')"
+          :btn="$t('lunchMenu.btn')"
+          link="/menu/main"
         />
       </div>
     </section>
@@ -90,7 +92,7 @@ export default {
   layout: 'no-footer',
   async asyncData({ app }) {
     const data = await app.$axios.$get(
-      `/api/pages?lang=${app.i18n.locale}&slug=main-menu`
+      `/api/pages?lang=${app.i18n.locale}&slug=lunch-menu`
     )
     const menu = data[0].ACF.group
     return { menu }
@@ -108,7 +110,7 @@ export default {
   },
   watch: {
     locale() {
-      this.$router.push(this.localePath('/main-menu'))
+      this.$router.push(this.localePath('/menu/lunch'))
     },
   },
   methods: {

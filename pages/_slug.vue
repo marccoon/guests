@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import { decode } from 'html-entities'
 import Title from '~/components/app/Title'
 
 export default {
@@ -32,6 +33,10 @@ export default {
     try {
       const data = await $axios.$get(`/api/pages?slug=${params.slug}`)
       const page = data[0]
+      if (!page) {
+        return error({ statusCode: 404, message: 'Post not found' })
+      }
+
       // eslint-disable-next-line camelcase
       return { page }
     } catch (e) {
@@ -40,7 +45,7 @@ export default {
   },
   head() {
     return {
-      title: this.page?.yoast_title,
+      title: decode(this.page?.yoast_title),
       meta: this.page?.yoast_meta.map((meta) => {
         meta.content = meta.content.replace(
           'wp.gosti-minsk.by',
@@ -52,5 +57,3 @@ export default {
   },
 }
 </script>
-
-<style scoped></style>

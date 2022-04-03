@@ -54,6 +54,7 @@
 </template>
 
 <script>
+import { decode } from 'html-entities'
 import SocialIcon from '~/components/app/SocialIcon'
 import Title from '~/components/app/Title'
 
@@ -73,7 +74,7 @@ export default {
   },
   head() {
     return {
-      title: this.report?.yoast_title,
+      title: decode(this.report?.yoast_title),
       meta: this.report?.yoast_meta.map((meta) => {
         meta.content = meta.content.replace(
           'wp.gosti-minsk.by',

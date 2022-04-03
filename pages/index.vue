@@ -79,7 +79,7 @@
         <Card
           :title="$t('mainPage.mainMenuTitle')"
           :btn="$t('mainPage.menuBtn')"
-          link="main-menu"
+          link="menu/main"
           class="mx-auto"
         />
       </div>
@@ -98,7 +98,7 @@
         <Card
           :title="$t('mainPage.lunchMenuTitle')"
           :btn="$t('mainPage.menuBtn')"
-          link="lunch-menu"
+          link="menu/lunch"
           class="mx-auto"
         />
       </div>
@@ -155,6 +155,7 @@
 </template>
 
 <script>
+import { decode } from 'html-entities'
 import Card from '~/components/cards/Card'
 import SocialIcon from '~/components/app/SocialIcon'
 import Form from '~/components/form/Form'
@@ -203,7 +204,7 @@ export default {
   },
   head() {
     return {
-      title: this.page.yoast_title,
+      title: decode(this.page.yoast_title),
       meta: this.page.yoast_meta.map((meta) => {
         meta.content = meta.content.replace(
           'wp.gosti-minsk.by',
