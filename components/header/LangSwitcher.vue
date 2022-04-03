@@ -1,7 +1,17 @@
 <template>
   <div class="relative">
     <div
-      class="cursor-pointer border border-select text-select w-16 h-9 flex items-center justify-around uppercase"
+      class="
+        cursor-pointer
+        border border-select
+        text-select
+        w-16
+        h-9
+        flex
+        items-center
+        justify-around
+        uppercase
+      "
       @click="active = !active"
     >
       {{ locale }}
@@ -27,13 +37,17 @@
       class="absolute top-full uppercase w-16 py-2 text-select bg-black"
     >
       <ul class="text-center">
-        <li
-          v-for="(local, lidx) in $i18n.locales"
-          :key="lidx"
-          class="py-1 transition-all duration-150 hover:text-select-hover cursor-pointer"
-        >
+        <li v-for="(local, lidx) in $i18n.locales" :key="lidx">
           <nuxt-link
             :to="switchLocalePath(local)"
+            class="
+              block
+              py-2
+              transition-all
+              duration-150
+              hover:text-select-hover
+              cursor-pointer
+            "
             @click.native="active = false"
             >{{ local }}</nuxt-link
           >
