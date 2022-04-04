@@ -163,12 +163,6 @@ export default {
       },
     },
   },
-  robots: {
-    UserAgent: '*',
-    Disallow: '',
-    Allow: '/',
-    Sitemap: `${process.env.BASE_URL}/sitemap.xml`,
-  },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
