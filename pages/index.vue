@@ -47,7 +47,7 @@
     <section class="lg:pt-32 lg:pb-20 sm:pt-24 sm:pb-16 pt-20 pb-10">
       <div class="container">
         <PhotoText
-          img="img/index-about-img-top.jpg"
+          img="/img/index-about-img-top.jpg"
           :title="$t('mainPage.aboutUsTitle')"
           :text="page.content.rendered"
           :link-name="$t('mainPage.aboutUsLink')"
@@ -58,7 +58,7 @@
     </section>
     <section class="lg:pt-20 lg:pb-40 sm:pt-16 sm:pb-32 pt-10 pb-20">
       <PhotoPhrase
-        img="img/img-3.jpg"
+        img="/img/img-3.jpg"
         :phrase="$t('mainPage.phrase')"
         :reverse="true"
       />

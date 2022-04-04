@@ -93,7 +93,7 @@ export default {
     },
     reverse: {
       type: Boolean,
-      required: true,
+      default: false,
     },
   },
 }
