@@ -5,7 +5,7 @@
       'lg:px-10 xl:py-20 lg:py-12 md:px-4 py-8 sm:px-3 px-1': title,
       'lg:px-10 xl:py-12 lg:py-10 md:px-4 sm:py-6 sm:p-3': !title,
     }"
-    @submit.prevent="submitHandler"
+    @submit="submitHandler"
   >
     <div class="sm:w-11/12 w-full mx-auto">
       <Title
@@ -35,8 +35,9 @@
           <input
             v-model="date"
             type="date"
+            required
             class="date-time font-light bg-transparent cursor-pointer border border-select text-select lg:text-base text-sm w-7/12 p-3"
-          />
+          >
           <input
             v-model="time"
             type="time"
@@ -44,22 +45,24 @@
             max="23:30"
             step="600"
             class="date-time font-light bg-transparent cursor-pointer border border-select text-select lg:text-base text-sm w-5/12 p-3"
-          />
+          >
         </div>
         <div
           class="xl:w-1/4 md:w-1/3 sm:w-1/2 w-full lg:max-w-64 max-w-56 lg:px-0 px-2 md:m-0 m-2"
         >
-          <client-only>
-            <PhoneMaskInput
-              v-model="phone"
-              auto-detect-country
-              default-country="by"
-              :placeholder="$t('form.placeholder2')"
-              wrapper-class="font-light border border-select flex justify-center align-middle text-select lg:text-base text-sm w-full p-3"
-              input-class="date-time placeholder-select bg-transparent"
-              flag-class=""
-            />
-          </client-only>
+          <vue-tel-input
+            v-model="phone"
+            default-country="BY"
+            :input-options="{
+              showDialCode: true,
+              required: true,
+              placeholder: $t('form.placeholder2'),
+              styleClasses: 'date-time placeholder-select bg-transparent',
+            }"
+            style-classes="font-light border border-select rounded-none flex justify-center align-middle text-select lg:text-base text-sm w-full h-full"
+            area-required
+            class="phone-wrap"
+          />
         </div>
 
         <div
@@ -94,8 +97,8 @@ export default {
   props: {
     title: {
       type: String,
-      default: '',
-    },
+      default: ''
+    }
   },
   data: () => ({
     personSelect: false,
@@ -104,10 +107,10 @@ export default {
     phone: '',
     date: '',
     time: '',
-    success: false,
+    success: false
   }),
   methods: {
-    async submitHandler() {
+    async submitHandler () {
       const formData = new FormData()
       formData.set('person', this.currentPerson)
       formData.set('date', this.date)
@@ -122,6 +125,7 @@ export default {
         .then((res) => {
           if (res.invalid_fields) {
             this.success = true
+            // eslint-disable-next-line no-console
             console.log(res.invalid_fields)
           } else {
             this.currentPerson = 0
@@ -132,10 +136,11 @@ export default {
           }
         })
         .catch((e) => {
+          // eslint-disable-next-line no-console
           console.log(e)
         })
-    },
-  },
+    }
+  }
 }
 </script>
 
@@ -143,5 +148,8 @@ export default {
 .date-time::-webkit-calendar-picker-indicator {
   filter: invert(1);
   margin-left: 2px;
+}
+::v-deep .vti__dropdown-list.below {
+  top: 48px;
 }
 </style>

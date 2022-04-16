@@ -1,0 +1,14 @@
+.phone-wrap.vue-tel-input {
+  @apply rounded-none border-select text-left;
+}
+.phone-wrap .vti__dropdown-list {
+  @apply bg-dishes border-select;
+}
+.phone-wrap .vti__dropdown:hover,
+.phone-wrap .vti__dropdown.disabled,
+.phone-wrap .vti__dropdown.open {
+  @apply bg-dishes;
+}
+.phone-wrap .vti__dropdown-item.highlighted {
+  @apply bg-black;
+}

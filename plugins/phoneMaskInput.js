@@ -1,4 +1,5 @@
 import Vue from 'vue'
-import PhoneMaskInput from 'vue-phone-mask-input'
+import VueTelInput from 'vue-tel-input'
+import 'vue-tel-input/dist/vue-tel-input.css'
 
-Vue.component('PhoneMaskInput', PhoneMaskInput)
+Vue.use(VueTelInput)

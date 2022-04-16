@@ -64,41 +64,21 @@
       />
     </section>
     <section class="flex flex-wrap">
-      <div
-        class="
-          md:w-1/2
-          w-full
-          xl:py-56
-          lg:py-36
-          md:py-16
-          sm:py-20
-          py-16
-          bg-index-menu-1 bg-cover
-        "
-      >
+      <div class="md:w-1/2 w-full xl:py-56 lg:py-36 md:py-16 sm:py-20 py-16 bg-index-menu-1 bg-cover">
         <Card
           :title="$t('mainPage.mainMenuTitle')"
           :btn="$t('mainPage.menuBtn')"
-          link="menu/main"
+          link="/menu/main"
           class="mx-auto"
         />
       </div>
       <div
-        class="
-          md:w-1/2
-          w-full
-          xl:py-56
-          lg:py-36
-          md:py-16
-          sm:py-20
-          py-16
-          bg-index-menu-2 bg-cover
-        "
+        class="md:w-1/2 w-full xl:py-56 lg:py-36 md:py-16 sm:py-20 py-16 bg-index-menu-2 bg-cover"
       >
         <Card
           :title="$t('mainPage.lunchMenuTitle')"
           :btn="$t('mainPage.menuBtn')"
-          link="menu/lunch"
+          link="/menu/lunch"
           class="mx-auto"
         />
       </div>
@@ -134,15 +114,7 @@
     </section>
     <section class="flex flex-wrap">
       <div
-        class="
-          lg:w-1/2
-          w-full
-          bg-contact
-          flex
-          justify-center
-          items-center
-          py-10
-        "
+        class="lg:w-1/2 w-full bg-contact flex justify-center items-center py-10"
       >
         <div class="flex flex-col items-center">
           <Title :title="$t('contacts.title')" class="mx-auto block" />
@@ -182,9 +154,9 @@ export default {
     PhotoPhrase,
     Title,
     GallerySlider,
-    Map,
+    Map
   },
-  async asyncData({ app }) {
+  async asyncData ({ app }) {
     const data = await app.$axios.$get(
       `/api/pages?lang=${app.i18n.locale}&slug=main`
     )
@@ -197,12 +169,12 @@ export default {
 
     return { page, gallerySlides, reserveTabs }
   },
-  data() {
+  data () {
     return {
-      posterSlides: [],
+      posterSlides: []
     }
   },
-  head() {
+  head () {
     return {
       title: decode(this.page.yoast_title),
       meta: this.page.yoast_meta.map((meta) => {
@@ -211,11 +183,11 @@ export default {
           'gosti-minsk.by'
         )
         return meta
-      }),
+      })
     }
   },
-  async mounted() {
+  async mounted () {
     this.posterSlides = await this.$axios.$get('/api/afisha?per_page=7')
-  },
+  }
 }
 </script>
