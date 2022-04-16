@@ -20,6 +20,6 @@ import Map from '~/components/app/Map'
 
 export default {
   // name: "BlogSlider",
-  components: { Map, SocialIcon, Title, Contacts },
+  components: { Map, SocialIcon, Title, Contacts }
 }
 </script>

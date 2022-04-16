@@ -1,36 +1,43 @@
 export const state = () => ({
   modal: false,
   map: false,
+  usedLanguageSelection: false
 })
 
 export const mutations = {
-  showMap(state) {
+  showMap (state) {
     state.map = true
     state.modal = false
   },
-  hideMap(state) {
+  hideMap (state) {
     state.map = false
   },
-  showModal(state) {
+  showModal (state) {
     state.modal = true
     state.map = false
   },
-  hideModal(state) {
+  hideModal (state) {
     state.modal = false
   },
+  usedLanguageSelection (state) {
+    state.usedLanguageSelection = true
+  }
 }
 
 export const actions = {
-  hideMap({ commit }) {
+  hideMap ({ commit }) {
     commit('hideMap')
   },
-  showMap({ commit }) {
+  showMap ({ commit }) {
     commit('showMap')
   },
-  hideModal({ commit }) {
+  hideModal ({ commit }) {
     commit('hideModal')
   },
-  showModal({ commit }) {
+  showModal ({ commit }) {
     commit('showModal')
   },
+  usedLanguageSelection ({ commit }) {
+    commit('usedLanguageSelection')
+  }
 }

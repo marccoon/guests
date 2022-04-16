@@ -89,7 +89,7 @@ import Card from '~/components/cards/Card'
 export default {
   components: { Card, Title, MenuItem },
   layout: 'no-footer',
-  async asyncData({ app }) {
+  async asyncData ({ app }) {
     const data = await app.$axios.$get(
       `/api/pages?lang=${app.i18n.locale}&slug=main-menu`
     )
@@ -100,33 +100,25 @@ export default {
     return { menu, page }
   },
   data: () => ({
-    activeTab: 0,
+    activeTab: 0
   }),
-  head() {
+  head () {
     return {
-      title: decode(this.page?.yoast_title),
+      title: decode(this.page?.yoast_title)
     }
   },
   computed: {
-    dishes() {
+    dishes () {
       return this.menu[this.activeTab].dishes
-    },
-    locale() {
-      return this.$i18n.locale
-    },
-  },
-  watch: {
-    locale() {
-      this.$router.push(this.localePath('/menu/main'))
-    },
+    }
   },
   methods: {
-    tabCLickHandler(index) {
+    tabCLickHandler (index) {
       this.activeTab = index
       this.$refs['menu-list'].scrollLeft =
         index !== 0 ? this.$refs['menu-tab'][index].offsetLeft : 0
-    },
-  },
+    }
+  }
 }
 </script>
 

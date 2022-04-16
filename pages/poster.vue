@@ -17,14 +17,15 @@
 import SocialIcon from '~/components/app/SocialIcon'
 import Title from '~/components/app/Title'
 import Posters from '~/components/cards/Posters'
+
 export default {
   components: { SocialIcon, Title, Posters },
   layout: 'no-footer',
-  async asyncData({ app }) {
+  async asyncData ({ app }) {
     const posters = await app.$axios.$get('/api/afisha')
     // console.log(posters)
     return { posters }
-  },
+  }
 }
 </script>
 

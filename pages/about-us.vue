@@ -26,7 +26,7 @@
     <section class="lg:py-20 sm:py-16 py-10">
       <div class="container">
         <video controls autoplay class="w-full">
-          <source src="https://www.pexels.com/ru-ru/video/-1860079/" />
+          <source src="https://www.pexels.com/ru-ru/video/-1860079/">
         </video>
       </div>
     </section>
@@ -54,6 +54,6 @@ import PhotoPhrase from '~/components/app/PhotoPhrase'
 
 export default {
   components: { Title, PhotoText, PhotoPhrase },
-  layout: 'no-footer',
+  layout: 'no-footer'
 }
 </script>

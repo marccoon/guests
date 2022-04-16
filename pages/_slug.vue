@@ -8,7 +8,7 @@
           ? `background-image: url(${page.featured_image_url})`
           : ''
       "
-    ></section>
+    />
     <section class="lg:pt-32 sm:pt-24 pt-16">
       <div class="container flex items-center justify-center">
         <Title class="drop-shadow-xl" :title="page.title.rendered" />
@@ -29,7 +29,7 @@ import Title from '~/components/app/Title'
 export default {
   name: 'Slug',
   components: { Title },
-  async asyncData({ $axios, params, error }) {
+  async asyncData ({ $axios, params, error }) {
     try {
       const data = await $axios.$get(`/api/pages?slug=${params.slug}`)
       const page = data[0]
@@ -43,7 +43,7 @@ export default {
       return error(e)
     }
   },
-  head() {
+  head () {
     return {
       title: decode(this.page?.yoast_title),
       meta: this.page?.yoast_meta.map((meta) => {
@@ -52,8 +52,8 @@ export default {
           'gosti-minsk.by'
         )
         return meta
-      }),
+      })
     }
-  },
+  }
 }
 </script>

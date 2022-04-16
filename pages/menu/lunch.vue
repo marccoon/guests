@@ -90,7 +90,7 @@ import Card from '~/components/cards/Card'
 export default {
   components: { Card, Title, MenuItem },
   layout: 'no-footer',
-  async asyncData({ app }) {
+  async asyncData ({ app }) {
     const data = await app.$axios.$get(
       `/api/pages?lang=${app.i18n.locale}&slug=lunch-menu`
     )
@@ -98,28 +98,20 @@ export default {
     return { menu }
   },
   data: () => ({
-    activeTab: 0,
+    activeTab: 0
   }),
   computed: {
-    dishes() {
+    dishes () {
       return this.menu[this.activeTab].dishes
-    },
-    locale() {
-      return this.$i18n.locale
-    },
-  },
-  watch: {
-    locale() {
-      this.$router.push(this.localePath('/menu/lunch'))
-    },
+    }
   },
   methods: {
-    tabCLickHandler(index) {
+    tabCLickHandler (index) {
       this.activeTab = index
       this.$refs['menu-list'].scrollLeft =
         index !== 0 ? this.$refs['menu-tab'][index].offsetLeft : 0
-    },
-  },
+    }
+  }
 }
 </script>
 

@@ -30,7 +30,8 @@
         <nuxt-link
           :to="localePath('/about-us')"
           @click.native="$emit('closeMenu')"
-          >{{ $t('navigation.item1') }}
+        >
+          {{ $t('navigation.item1') }}
         </nuxt-link>
       </li>
       <li class="my-6" @click="subMenu = !subMenu">
@@ -38,8 +39,8 @@
           {{ $t('navigation.item2') }}
           <svg
             :class="{
-              'rotate-180': !subMenu,
-              'rotate-0': subMenu,
+              'rotate-0': !subMenu,
+              'rotate-180': subMenu,
             }"
             class="transition-all duration-150 transform ml-3"
             width="8"
@@ -140,31 +141,31 @@ export default {
   props: {
     active: {
       type: Boolean,
-      required: true,
-    },
+      required: true
+    }
   },
   data: () => ({
     subMenu: true,
-    height: null,
+    height: null
   }),
   watch: {
-    subMenu() {
+    subMenu () {
       if (this.subMenu) {
         this.$refs.submenu.style.height = this.height
       } else {
         this.$refs.submenu.style.height = 0
       }
-    },
+    }
   },
-  mounted() {
+  mounted () {
     this.height = this.$refs.submenu.offsetHeight + 'px'
     this.subMenu = false
   },
   methods: {
-    openModal() {
+    openModal () {
       this.$store.dispatch('showModal')
-    },
-  },
+    }
+  }
 }
 </script>
 
