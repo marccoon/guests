@@ -1,0 +1,24 @@
+<template>
+  <svg
+    width="50"
+    height="31"
+    viewBox="0 0 50 31"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect width="40" height="1" fill="#C9AB81" />
+    <rect y="9" width="40" height="1" fill="#C9AB81" />
+    <rect x="10" y="21" width="40" height="1" fill="#C9AB81" />
+    <rect x="10" y="30" width="40" height="1" fill="#C9AB81" />
+  </svg>
+</template>
+
+<script>
+export default {
+  name: 'MenuBurgerSvg'
+}
+</script>
+
+<style scoped>
+
+</style>

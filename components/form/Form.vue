@@ -2,7 +2,7 @@
   <form
     class="bg-form w-full"
     :class="{
-      'lg:px-10 xl:py-20 lg:py-12 md:px-4 py-8 sm:px-3 px-1': title,
+      'lg:px-10 xl:py-20 lg:py-12 md:px-4 py-8 px-3': title,
       'lg:px-10 xl:py-12 lg:py-10 md:px-4 sm:py-6 sm:p-3': !title,
     }"
     @submit="submitHandler"
@@ -17,7 +17,7 @@
         class="flex xl:justify-between lg:justify-around justify-center flex-wrap"
       >
         <div
-          class="xl:w-1/4 md:w-1/3 sm:w-1/2 w-full lg:max-w-64 max-w-56 lg:px-0 px-2 md:m-0 m-2"
+          class="xl:w-1/4 md:w-1/3 w-full lg:max-w-64 lg:px-0 px-2 md:m-0 m-2"
         >
           <Select
             class="w-full mx-auto"
@@ -30,7 +30,7 @@
           />
         </div>
         <div
-          class="xl:w-1/4 md:w-1/3 sm:w-1/2 lg:max-w-64 max-w-56 w-full flex flex-row lg:px-0 px-2 md:m-0 m-2"
+          class="xl:w-1/4 md:w-1/3 w-full lg:max-w-64 flex flex-row lg:px-0 px-2 md:m-0 m-2"
         >
           <input
             v-model="date"
@@ -48,7 +48,7 @@
           >
         </div>
         <div
-          class="xl:w-1/4 md:w-1/3 sm:w-1/2 w-full lg:max-w-64 max-w-56 lg:px-0 px-2 md:m-0 m-2"
+          class="xl:w-1/4 md:w-1/3 w-full lg:max-w-64 lg:px-0 px-2 md:m-0 m-2"
         >
           <vue-tel-input
             v-model="phone"
@@ -57,7 +57,7 @@
               showDialCode: true,
               required: true,
               placeholder: $t('form.placeholder2'),
-              styleClasses: 'date-time placeholder-select bg-transparent',
+              styleClasses: 'date-time placeholder-select bg-transparent p-3',
             }"
             style-classes="font-light border border-select rounded-none flex justify-center align-middle text-select lg:text-base text-sm w-full h-full"
             area-required
@@ -66,7 +66,7 @@
         </div>
 
         <div
-          class="xl:w-1/5 md:w-1/3 sm:w-1/2 w-full md:max-w-none lg:max-w-64 max-w-56 lg:px-0 px-2 lg:mt-6 md:mt-4 md:m-0 m-2 xl:m-0"
+          class="xl:w-1/5 md:w-1/3 sm:w-1/2 w-full md:max-w-none lg:max-w-64 max-w-56 lg:px-0 px-2 lg:mt-6 md:mt-4 md:m-0 mt-6 m-2 xl:m-0"
         >
           <Button
             class="w-full mx-auto"

@@ -5,70 +5,7 @@
         <Title :title="$t('mainMenu.title')" />
       </div>
     </section>
-    <section class="lg:py-40 sm:py-32 py-20">
-      <div class="container flex items-start flex-wrap">
-        <div class="md:w-1/4 w-full md:pr-4">
-          <ul
-            ref="menu-list"
-            class="
-              md:block
-              overflow-y-scroll
-              scrollbar-hide
-              flex flex-nowrap
-              w-full
-              items-center
-              gap-4
-            "
-          >
-            <li
-              v-for="(item, index) in menu"
-              :key="index"
-              ref="menu-tab"
-              class="
-                uppercase
-                md:mb-5
-                flex-shrink-0
-                text-category
-                cursor-pointer
-              "
-              :class="{
-                'text-category lg:text-base text-xs': activeTab !== index,
-                'text-category-active lg:text-lg md:text-sm text-xs':
-                  activeTab === index,
-              }"
-              @click="tabCLickHandler(index)"
-            >
-              {{ item.name }}
-            </li>
-          </ul>
-        </div>
-        <div
-          class="
-            md:w-3/4
-            w-full
-            grid
-            md:grid-cols-2
-            gap-4
-            bg-dishes
-            xl:px-16
-            lg:px-12
-            md:px-6
-            px-4
-            md:mt-0
-            mt-8
-          "
-        >
-          <div v-for="(item, index) in dishes" :key="index">
-            <MenuItem
-              :image="item.image"
-              :price="item.price"
-              :title="item.name"
-              :text="item.description"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
+    <DishedMenu :menu="menu" />
     <section class="bg-lunch bg-cover bg-center w-full xl:py-40 md:py-24 py-20">
       <div class="container flex justify-center">
         <Card
@@ -92,47 +29,12 @@
         <div class="relative bg-dishes shadow">
           <!-- Modal header -->
           <div class="flex justify-between items-start p-5 pb-0">
-            <button type="button" class="text-gray-400 bg-transparent rounded-lg text-sm p-1.5 ml-auto inline-flex items-center" @click="$store.dispatch('usedLanguageSelection', { root: true})">
-              <svg
-                width="36"
-                height="36"
-                viewBox="0 0 36 36"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="7.39313"
-                  y="0.322327"
-                  width="40"
-                  height="1"
-                  transform="rotate(45 7.39313 0.322327)"
-                  fill="#C9AB81"
-                />
-                <rect
-                  x="1.02917"
-                  y="6.68628"
-                  width="40"
-                  height="1"
-                  transform="rotate(45 1.02917 6.68628)"
-                  fill="#C9AB81"
-                />
-                <rect
-                  x="0.322327"
-                  y="28.6066"
-                  width="40"
-                  height="1"
-                  transform="rotate(-45 0.322327 28.6066)"
-                  fill="#C9AB81"
-                />
-                <rect
-                  x="6.68628"
-                  y="34.9706"
-                  width="40"
-                  height="1"
-                  transform="rotate(-45 6.68628 34.9706)"
-                  fill="#C9AB81"
-                />
-              </svg>
+            <button
+              type="button"
+              class="text-gray-400 bg-transparent rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+              @click="$store.dispatch('usedLanguageSelection', { root: true})"
+            >
+              <CloseSvg />
             </button>
           </div>
           <!-- Modal body -->
@@ -153,36 +55,31 @@
   </div>
 </template>
 <script>
+import { decode } from 'html-entities'
 import Title from '~/components/app/Title'
-import MenuItem from '~/components/app/MenuItem'
 import Card from '~/components/cards/Card'
+import CloseSvg from '~/components/svg/CloseSvg'
+import DishedMenu from '~/components/app/DishedMenu'
 
 export default {
-  components: { Card, Title, MenuItem },
+  components: { DishedMenu, Card, Title, CloseSvg },
   layout: 'no-footer',
   async asyncData ({ app }) {
     const data = await app.$axios.$get(
       `/api/pages?lang=${app.i18n.locale}&slug=main-menu`
     )
+    const page = data[0]
     const menu = data[0].ACF.group
-    return { menu }
+    return { menu, page }
   },
-  data: () => ({
-    activeTab: 0
-  }),
-  computed: {
-    dishes () {
-      return this.menu[this.activeTab].dishes
-    },
-    languagesDialogOpened () {
-      return !this.$store.state.usedLanguageSelection
+  head () {
+    return {
+      title: decode(this.page?.yoast_title)
     }
   },
-  methods: {
-    tabCLickHandler (index) {
-      this.activeTab = index
-      this.$refs['menu-list'].scrollLeft =
-        index !== 0 ? this.$refs['menu-tab'][index].offsetLeft : 0
+  computed: {
+    languagesDialogOpened () {
+      return !this.$store.state.usedLanguageSelection
     }
   }
 }

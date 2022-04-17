@@ -1,0 +1,46 @@
+<template>
+  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect
+      x="7.39313"
+      y="0.322327"
+      width="40"
+      height="1"
+      transform="rotate(45 7.39313 0.322327)"
+      fill="#C9AB81"
+    />
+    <rect
+      x="1.02917"
+      y="6.68628"
+      width="40"
+      height="1"
+      transform="rotate(45 1.02917 6.68628)"
+      fill="#C9AB81"
+    />
+    <rect
+      x="0.322327"
+      y="28.6066"
+      width="40"
+      height="1"
+      transform="rotate(-45 0.322327 28.6066)"
+      fill="#C9AB81"
+    />
+    <rect
+      x="6.68628"
+      y="34.9706"
+      width="40"
+      height="1"
+      transform="rotate(-45 6.68628 34.9706)"
+      fill="#C9AB81"
+    />
+  </svg>
+</template>
+
+<script>
+export default {
+  name: 'CloseSvg'
+}
+</script>
+
+<style scoped>
+
+</style>

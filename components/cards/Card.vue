@@ -1,22 +1,17 @@
 <template>
   <div
     class="
-      lg:py-12 lg:px-4
-      sm:py-8
-      px-2
-      py-4
-      lg:max-w-xs
-      sm:max-w-64
-      max-w-48
+      flex flex-col items-center
       border
       bg-card
-      flex flex-col
-      items-center
+      lg:py-12 sm:py-8 py-4
+      lg:px-4 px-6
+      lg:max-w-xs max-w-64
     "
   >
     <TitleSmall :title="title" />
-    <div class="text-card uppercase mt-8" v-html="date"></div>
-    <div class="mt-3 text-white" v-html="excerpt"></div>
+    <div v-if="date" class="text-card uppercase mt-8" v-html="date" />
+    <div v-if="excerpt" class="mt-3 text-white" v-html="excerpt" />
     <Button
       class="lg:mt-10 sm:mt-8 mt-6 sm:min-w-xxs sm:w-auto w-full"
       :btn="btn"
@@ -34,25 +29,25 @@ export default {
   props: {
     title: {
       type: String,
-      required: true,
+      required: true
     },
     excerpt: {
       type: String,
-      default: '',
+      default: ''
     },
     btn: {
       type: String,
-      required: true,
+      required: true
     },
     link: {
       type: String,
-      default: '',
+      default: ''
     },
     date: {
       type: String,
-      default: '',
-    },
-  },
+      default: ''
+    }
+  }
 }
 </script>
 
