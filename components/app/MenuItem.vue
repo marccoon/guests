@@ -1,10 +1,10 @@
 <template>
   <div class="flex flex-col w-full flex-nowrap items-start">
-    <div class="w-full mb-4">
-      <div
-        v-if="image"
-        class="aspect-w-16 aspect-h-9 md:aspect-w-4 md:aspect-h-3"
-      >
+    <div
+      v-if="image"
+      class="w-full mb-4"
+    >
+      <div class="aspect-w-16 aspect-h-9 md:aspect-w-4 md:aspect-h-3">
         <img
           :src="src"
           class="absolute inset-0 w-full h-full object-cover"
@@ -20,13 +20,11 @@
         <div
           class="bg-line bg-repeat-x flex-shrink w-auto h-1.5 flex-grow mx-2"
         />
-        <span class="flex-shrink-0 text-dish-title lg:text-lg text-md">
+        <span v-if="price" class="flex-shrink-0 text-dish-title lg:text-lg text-md">
           {{ price }} <span class="text-xs">{{ "BYN" }}</span>
         </span>
       </div>
-      <p class="text-dish-text lg:text-sm text-xs md:w-4/5 w-full mt-3">
-        {{ text }}
-      </p>
+      <div class="text-dish-text lg:text-sm text-xs md:w-4/5 w-full mt-3" v-html="text" />
     </div>
   </div>
 </template>

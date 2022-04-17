@@ -6,14 +6,14 @@ export default {
     item4: 'Menu "Lunch"',
     item5: 'Upcoming Events',
     item6: 'Photos, videos',
-    item7: 'Contacts',
+    item7: 'Contacts'
   },
   links: {
-    menuLink: 'Новогодние корпоративы',
+    menuLink: 'Новогодние корпоративы'
   },
   buttons: {
     menuBtn: 'Book a table',
-    posterBtn: 'Book',
+    posterBtn: 'Book'
   },
   contacts: {
     title: 'Contacts',
@@ -27,14 +27,14 @@ export default {
     time1: 'с 12:00 до 02:00',
     time2: 'с 12:00 до 06:00',
     time3: 'с 14:00 до 06:00',
-    time4: 'с 14:00 до 02:00',
+    time4: 'с 14:00 до 02:00'
   },
   form: {
     title: 'Book a table',
     placeholder1: 'Count of person:',
     placeholder2: 'Phone',
     message: 'Successfully sent',
-    btn: 'Book',
+    btn: 'Book'
   },
   mainPage: {
     aboutUsTitle: 'About Us',
@@ -49,7 +49,7 @@ export default {
     posterTitle: 'Upcoming events',
     posterText:
       'Атмосфера грандиозного праздника от лучших кавер-бэндов города ждет вас каждый.',
-    galleryTitle: 'Gallery',
+    galleryTitle: 'Gallery'
   },
   aboutUs: {
     aboutUsTitle: 'About Us',
@@ -79,23 +79,30 @@ export default {
       'и дружелюбным персоналом.',
     phrase2:
       'Хорошие продукты и техника лежат в основе того, что мы делаем. Мы считаем, что лучшие блюда — это опыт.',
-    link1: 'go to menu',
+    link1: 'go to menu'
   },
   gallery: {
     title: 'Photos, Videos',
-    btn: 'More',
+    btn: 'More'
+  },
+  commonMenu: {
+    menu: 'Menu',
+    bar: 'Bar',
+    wine: 'Wine card',
+    beer: 'Beer book',
+    emptyList: 'Choose a category'
   },
   lunchMenu: {
     title: 'Menu "Lunch"',
     cardTitle: 'Menu "Main"',
-    btn: 'go to menu',
+    btn: 'go to menu'
   },
   mainMenu: {
     title: 'Menu "Main"',
     cardTitle: 'Menu "Lunch"',
-    btn: 'go to menu',
+    btn: 'go to menu'
   },
   posters: {
-    title: 'Upcoming Events',
-  },
+    title: 'Upcoming Events'
+  }
 }
