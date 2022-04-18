@@ -5,13 +5,13 @@
     <div
       class="overflow-x-hidden"
       :class="{
-        'fixed top-0 z-20 w-full bg-bg bg-repeat-y bg-100% bg-center': fixedOnTop,
+        'md:relative fixed top-0 z-20 w-full bg-bg bg-repeat-y bg-100% bg-center': fixedOnTop,
       }"
     >
       <div
         ref="selectCategory"
         class="container flex pt-6 md:mb-12"
-        :class="{'py-6': fixedOnTop}"
+        :class="{'py-6 md:pb-0': fixedOnTop}"
       >
         <transition name="slide-fade-absolute">
           <div v-if="activeCategoryIndex || activeCategoryIndex === 0" class="w-full">
@@ -60,8 +60,8 @@
       ref="menu-items"
       class="container flex items-start flex-wrap"
       :class="{
-        'pt-12': fixedOnTop,
-        'pt-20' :fixedOnTop && (activeCategoryIndex || activeCategoryIndex === 0)
+        'pt-12 md:pt-0': fixedOnTop,
+        'pt-20 md:pt-0' :fixedOnTop && (activeCategoryIndex || activeCategoryIndex === 0)
       }"
     >
       <div class="md:w-1/4 hidden md:block md:pr-4">
