@@ -14,12 +14,12 @@
         :class="{'py-6': fixedOnTop}"
       >
         <transition name="slide-fade-absolute">
-          <div v-if="activeCategoryIndex || activeCategoryIndex === 0">
+          <div v-if="activeCategoryIndex || activeCategoryIndex === 0" class="w-full">
             <div
-              class="flex items-center text-link md:text-4xl cursor-pointer text-2xl capitalize"
+              class="inline-flex items-center text-link md:text-4xl cursor-pointer text-2xl capitalize"
               @click="categorySwitchHandler"
             >
-              <div class="flex items-center -ml-1 w-7 h-7">
+              <div class="flex items-center w-7 h-7">
                 <MenuBurgerSvg
                   width="24"
                   height="15"
@@ -49,7 +49,7 @@
           </div>
         </transition>
         <transition name="slide-fade-absolute">
-          <div v-if="!activeCategoryIndex && activeCategoryIndex !== 0" class="text-link md:text-4xl text-xl capitalize">
+          <div v-if="!activeCategoryIndex && activeCategoryIndex !== 0" class="whitespace-nowrap text-link md:text-4xl text-xl capitalize">
             {{ $t('commonMenu.emptyList') }}:
           </div>
         </transition>
@@ -172,9 +172,9 @@ export default {
     tabCLickHandler (index) {
       this.activeTab = index
       this.$refs['menu-list'].scrollLeft =
-          index !== 0 ? this.$refs['menu-tab'][index].offsetLeft - 100 : 0
+          index !== 0 ? this.$refs['menu-tab'][index].offsetLeft - 80 : 0
       this.$refs['menu-list_mobile'].scrollLeft =
-          index !== 0 ? this.$refs['menu-tab_mobile'][index].offsetLeft - 100 : 0
+          index !== 0 ? this.$refs['menu-tab_mobile'][index].offsetLeft - 80 : 0
 
       this.scrollToContent()
     },
