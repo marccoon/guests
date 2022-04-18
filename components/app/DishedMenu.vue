@@ -16,7 +16,7 @@
         <transition name="slide-fade-absolute">
           <div v-if="activeCategoryIndex || activeCategoryIndex === 0">
             <div
-              class="flex items-center text-link md:text-4xl cursor-pointer text-xl capitalize"
+              class="flex items-center text-link md:text-4xl cursor-pointer text-2xl capitalize"
               @click="categorySwitchHandler"
             >
               <div class="flex items-center -ml-1 w-7 h-7">
@@ -37,8 +37,8 @@
                 ref="menu-tab_mobile"
                 class="uppercase md:mb-5 flex-shrink-0 cursor-pointer"
                 :class="{
-                  'text-category lg:text-base text-xs': activeTab !== index,
-                  'text-category-active lg:text-lg md:text-sm text-xs':
+                  'text-category lg:text-base text-sm': activeTab !== index,
+                  'text-category-active lg:text-lg text-sm':
                     activeTab === index,
                 }"
                 @click="tabCLickHandler(index)"
