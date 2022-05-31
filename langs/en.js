@@ -104,5 +104,8 @@ export default {
   },
   posters: {
     title: 'Upcoming Events'
+  },
+  validation: {
+    requiredPhone: 'Please enter your phone'
   }
 }

@@ -104,5 +104,8 @@ export default {
   },
   posters: {
     title: 'Афиша'
+  },
+  validation: {
+    requiredPhone: 'Введите ваш телефон'
   }
 }

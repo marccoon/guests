@@ -5,7 +5,7 @@
       'lg:px-10 xl:py-20 lg:py-12 md:px-4 py-8 px-3': title,
       'lg:px-10 xl:py-12 lg:py-10 md:px-4 sm:py-6 sm:p-3': !title,
     }"
-    @submit="submitHandler"
+    @submit.prevent="submitHandler"
   >
     <div class="sm:w-11/12 w-full mx-auto">
       <Title
@@ -51,6 +51,7 @@
           class="xl:w-1/4 md:w-1/3 w-full lg:max-w-64 lg:px-0 px-2 md:m-0 m-2"
         >
           <vue-tel-input
+            ref="vueTel"
             v-model="phone"
             default-country="BY"
             :input-options="{
@@ -62,6 +63,8 @@
             style-classes="font-light border border-select rounded-none flex justify-center align-middle text-select lg:text-base text-sm w-full h-full"
             area-required
             class="phone-wrap"
+            :invalid-msg="$t('validation.requiredPhone')"
+            @validate="errors.phone = $event"
           />
         </div>
 
@@ -103,42 +106,46 @@ export default {
   data: () => ({
     personSelect: false,
     personOptions: [1, 2, 3, 4, 5, 6, 7, '8 и более'],
-    currentPerson: 0,
+    currentPerson: 1,
     phone: '',
     date: '',
     time: '',
+    errors: {},
     success: false
   }),
   methods: {
     async submitHandler () {
-      const formData = new FormData()
-      formData.set('person', this.currentPerson)
-      formData.set('date', this.date)
-      formData.set('time', this.time)
-      formData.set('phone', this.phone)
+      if (!this.errors.phone.valid) {
+        return
+      }
 
-      await this.$axios
-        .$post(
+      try {
+        const formData = new FormData()
+        formData.set('person', this.personOptions[this.currentPerson].toString())
+        formData.set('date', this.date)
+        formData.set('time', this.time)
+        formData.set('phone', this.phone)
+
+        await this.$axios.$post(
           'https://wp.gosti-minsk.by/wp-json/contact-form-7/v1/contact-forms/5/feedback',
           formData
         )
-        .then((res) => {
-          if (res.invalid_fields) {
-            this.success = true
-            // eslint-disable-next-line no-console
-            console.log(res.invalid_fields)
-          } else {
-            this.currentPerson = 0
-            this.phone = ''
-            this.date = ''
-            this.time = ''
-            this.success = true
-          }
-        })
-        .catch((e) => {
+        this.success = true
+      } catch (e) {
+        // eslint-disable-next-line no-console
+        console.log(e)
+        if (e.res?.invalid_fields) {
+          this.success = true
           // eslint-disable-next-line no-console
-          console.log(e)
-        })
+          console.log(e.res.invalid_fields)
+        }
+      } finally {
+        this.currentPerson = 1
+        this.phone = ''
+        this.date = ''
+        this.time = ''
+        this.errors = {}
+      }
     }
   }
 }
