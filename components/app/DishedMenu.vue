@@ -96,7 +96,7 @@
           v-for="(item, index) in formattedDishes"
           :key="`${categories[activeCategoryIndex]}-${activeTab}-${index}`"
           :image="item.image"
-          :price="item.price"
+          :price="lunchPrice && item.lunch_price || item.price"
           :title="item.name"
           :text="item.description"
         />
@@ -130,6 +130,10 @@ export default {
     menu: {
       type: Array,
       required: true
+    },
+    lunchPrice: {
+      type: Boolean,
+      default: false
     }
   },
   data () {

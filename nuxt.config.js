@@ -1,5 +1,6 @@
 import ru from './langs/ru'
 import en from './langs/en'
+import zh from './langs/zh'
 const isDev = process.env.NODE_ENV !== 'production'
 
 export default {
@@ -155,7 +156,7 @@ export default {
   ],
 
   i18n: {
-    locales: ['ru', 'en'],
+    locales: ['ru', 'en', 'zh'],
     defaultLocale: 'ru',
     vueI18n: {
       fallbackLocale: 'source',
@@ -163,11 +164,13 @@ export default {
         source: {
           languagesNative: {
             en: 'English',
-            ru: 'Русский'
+            ru: 'Русский',
+            zh: '中文'
           }
         },
         ru,
-        en
+        en,
+        zh
       }
     }
   },

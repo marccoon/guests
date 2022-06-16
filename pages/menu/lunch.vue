@@ -5,13 +5,16 @@
         <Title :title="$t('lunchMenu.title')" />
       </div>
     </section>
-    <DishedMenu :menu="menu" />
+    <DishedMenu
+      :menu="menu"
+      lunch-price
+    />
     <section class="bg-main-menu bg-cover bg-center w-full xl:py-40 md:py-24 py-20">
       <div class="container flex justify-center">
         <Card
           :title="$t('lunchMenu.cardTitle')"
           :btn="$t('lunchMenu.btn')"
-          link="/menu/main"
+          link="/menu/full"
         />
       </div>
     </section>
@@ -28,10 +31,12 @@ export default {
   layout: 'no-footer',
   async asyncData ({ app }) {
     const data = await app.$axios.$get(
-      `/api/pages?lang=${app.i18n.locale}&slug=lunch-menu`
+      `/api/pages?lang=${app.i18n.locale}&slug=main-menu`
     )
     const page = data[0]
-    const menu = data[0].ACF.group
+    const menu = page.ACF.group.filter((item) => {
+      return item.private === false
+    })
     return { menu, page }
   },
   head () {

@@ -62,7 +62,7 @@
         >
           <li class="mt-6">
             <nuxt-link
-              :to="localePath('/menu/main')"
+              :to="localePath('/menu/full')"
               @click.native="$emit('closeMenu')"
             >
               {{ $t('navigation.item3') }}

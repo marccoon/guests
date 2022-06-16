@@ -34,7 +34,7 @@
     </div>
     <div
       v-if="active"
-      class="absolute top-full uppercase w-16 py-2 text-select bg-black"
+      class="absolute right-0 top-full uppercase py-4 text-select bg-black"
     >
       <ul class="text-center">
         <li v-for="(local, lidx) in $i18n.locales" :key="lidx">
@@ -42,15 +42,16 @@
             :to="switchLocalePath(local)"
             class="
               block
-              py-2
+              p-3
               transition-all
               duration-150
               hover:text-select-hover
               cursor-pointer
             "
             @click.native="active = false"
-            >{{ local }}</nuxt-link
           >
+            {{ $t(`languagesNative.${local}`) }}
+          </nuxt-link>
         </li>
       </ul>
     </div>
@@ -61,13 +62,13 @@
 export default {
   name: 'LangSwitcher',
   data: () => ({
-    active: false,
+    active: false
   }),
   computed: {
-    locale() {
+    locale () {
       return this.$i18n.locale
-    },
-  },
+    }
+  }
 }
 </script>
 
