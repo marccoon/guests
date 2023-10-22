@@ -1,111 +1,92 @@
+// CHINESE TRANSLATION
 export default {
   navigation: {
-    item1: 'About Us',
-    item2: 'Menus',
-    item3: 'Menu "Main"',
-    item4: 'Menu "Lunch"',
-    item5: 'Upcoming Events',
-    item6: 'Photos, videos',
-    item7: 'Contacts'
+    item1: '关于我们',
+    item2: '菜单',
+    item3: '主菜单',
+    item4: '午餐菜单',
+    item5: '海报',
+    item6: '照片，视频',
+    item7: '联系方式'
   },
   links: {
-    menuLink: 'Новогодние корпоративы'
+    menuLink: '新年企业聚会'
   },
   buttons: {
-    menuBtn: 'Book a table',
-    posterBtn: 'Book'
+    menuBtn: '预订桌子',
+    posterBtn: '预订'
   },
   contacts: {
-    title: 'Contacts',
-    name: 'Госцi',
-    timeTitle: 'Время работы:',
-    address: 'г. Минск, пр-т Независимости, 25',
-    day1: 'Пн–Чт',
-    day2: 'Пт',
-    day3: 'Сб',
-    day4: 'Вс',
-    time1: 'с 12:00 до 02:00',
-    time2: 'с 12:00 до 06:00',
-    time3: 'с 14:00 до 06:00',
-    time4: 'с 14:00 до 02:00'
+    title: '联系方式',
+    name: 'Gosci',
+    timeTitle: '营业时间：',
+    address: '明斯克，独立大道，25号',
+    day1: '星期一至星期四',
+    day2: '星期五',
+    day3: '星期六',
+    day4: '星期日',
+    time1: '从12:00到02:00',
+    time2: '从12:00到06:00',
+    time3: '从14:00到06:00',
+    time4: '从14:00到02:00'
   },
   form: {
-    title: 'Book a table',
-    placeholder1: 'Count of person:',
-    placeholder2: 'Phone',
-    message: 'Successfully sent',
-    btn: 'Book'
+    title: '预订桌子',
+    placeholder1: '人数：',
+    placeholder2: '电话',
+    message: '申请已成功发送。管理员将尽快与您联系以确认预订',
+    btn: '预订'
   },
   mainPage: {
-    aboutUsTitle: 'About Us',
-    aboutUsLink: 'More',
-    phrase:
-      'Мы гордимся нашей\n' +
-      'непринужденной атмосферой\n' +
-      'и дружелюбным персоналом.',
-    mainMenuTitle: 'Menu "Main"',
-    lunchMenuTitle: 'Menu "Lunch"',
-    menuBtn: 'go to menu',
-    posterTitle: 'Upcoming events',
-    posterText:
-      'Атмосфера грандиозного праздника от лучших кавер-бэндов города ждет вас каждый.',
-    galleryTitle: 'Gallery'
+    aboutUsTitle: '关于我们',
+    aboutUsLink: '了解更多',
+    phrase: '我们为自己的\n' + '不拘一格的氛围\n' + '和友好的工作人员感到自豪。',
+    mainMenuTitle: '主菜单',
+    lunchMenuTitle: '午餐菜单',
+    menuBtn: '进入菜单',
+    posterTitle: '即将到来的活动',
+    posterText: 'The atmosphere of a grand celebration from the best cover bands of the city awaits you every.',
+    galleryTitle: '画廊'
   },
   aboutUs: {
-    aboutUsTitle: 'About Us',
-    text1:
-      'Дизайн обновлённого рестопаба «Госцi» выглядит современно и комфортно. Главный акцент сделан на сочетании зелени, дерева и белого света. Так же на первом плане выступает бар с большой барной стойкой, приветствующий гостей и как бы предлагающий своим видом апперитив. Позади него раскрывается просторный зал с мягкими диванами, различной формы столами и шикарными креслами. Каждая деталь помещения располагает к отдыху, даря возможность насладиться роскошными блюдами, а не отвлекая от них.',
-    text2:
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean\n' +
-      'commodo ligula eget dolor. Aenean massa. Cum sociis natoque\n' +
-      'penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n' +
-      'Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.\n' +
-      'Nulla consequat massa quis enim.\n' +
-      '<br>\n' +
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean\n' +
-      'commodo ligula eget dolor. Aenean massa. Cum sociis natoque\n' +
-      'penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n' +
-      'Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.\n' +
-      'Nulla consequat massa quis enim.\n' +
-      '<br>\n' +
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean\n' +
-      'commodo ligula eget dolor. Aenean massa. Cum sociis natoque\n' +
-      'penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n' +
-      'Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.\n' +
-      'Nulla consequat massa quis enim.',
-    phrase1:
-      'Мы гордимся нашей\n' +
-      'непринужденной атмосферой\n' +
-      'и дружелюбным персоналом.',
-    phrase2:
-      'Хорошие продукты и техника лежат в основе того, что мы делаем. Мы считаем, что лучшие блюда — это опыт.',
-    link1: 'go to menu'
+    aboutUsTitle: '关于我们',
+    text1: 'The design of the updated restaurant "Gosci" looks modern and comfortable.' +
+      ' The main emphasis is on the combination of greenery, wood and white light.' +
+      ' Also in the foreground is a bar with a large bar counter,' +
+      ' welcoming guests and as if offering an aperitif with its appearance.' +
+      ' Behind it is a spacious hall with soft sofas, tables of various shapes and luxurious armchairs.' +
+      ' Each detail of the room disposes to rest, giving the opportunity to enjoy luxurious dishes,' +
+      ' and not distracting from them.',
+    text2: '',
+    phrase1: '我们为自己的\n' + '不拘一格的氛围\n' + '和友好的工作人员感到自豪。',
+    phrase2: 'Good products and technology are at the heart of what we do. We believe that the best dishes are an experience.',
+    link1: '进入菜单'
   },
   gallery: {
-    title: 'Photos, Videos',
-    btn: 'More'
+    title: '画廊',
+    btn: '更多'
   },
   commonMenu: {
-    menu: 'Menu',
-    bar: 'Bar',
-    wine: 'Wine card',
-    beer: 'Beer book',
-    emptyList: 'Choose a category'
+    menu: '菜单',
+    bar: '酒吧',
+    wine: '酒单',
+    beer: '啤酒单',
+    emptyList: '选择其中一个类别'
   },
   lunchMenu: {
-    title: 'Menu "Lunch"',
-    cardTitle: 'Menu "Main"',
-    btn: 'go to menu'
+    title: '午餐菜单',
+    cardTitle: '主菜单',
+    btn: '进入菜单'
   },
   mainMenu: {
-    title: 'Menu "Main"',
-    cardTitle: 'Menu "Lunch"',
-    btn: 'go to menu'
+    title: '主菜单',
+    cardTitle: '午餐菜单',
+    btn: '进入菜单'
   },
   posters: {
-    title: 'Upcoming Events'
+    title: '即将到来的活动'
   },
   validation: {
-    requiredPhone: 'Please enter your phone'
+    requiredPhone: '请输入您的电话号码'
   }
 }

@@ -9,7 +9,7 @@ export default {
     item7: 'Contacts'
   },
   links: {
-    menuLink: 'Новогодние корпоративы'
+    menuLink: 'New Year\'s corporate parties'
   },
   buttons: {
     menuBtn: 'Book a table',
@@ -17,68 +17,48 @@ export default {
   },
   contacts: {
     title: 'Contacts',
-    name: 'Госцi',
-    timeTitle: 'Время работы:',
-    address: 'г. Минск, пр-т Независимости, 25',
-    day1: 'Пн–Чт',
-    day2: 'Пт',
-    day3: 'Сб',
-    day4: 'Вс',
-    time1: 'с 12:00 до 02:00',
-    time2: 'с 12:00 до 06:00',
-    time3: 'с 14:00 до 06:00',
-    time4: 'с 14:00 до 02:00'
+    name: 'Gosci',
+    timeTitle: 'Opening hours:',
+    address: 'Minsk, Independence Ave., 25',
+    day1: 'Mon–Thu',
+    day2: 'Fri',
+    day3: 'Sat',
+    day4: 'Sun',
+    time1: 'from 12:00 to 02:00',
+    time2: 'from 12:00 to 06:00',
+    time3: 'from 14:00 to 06:00',
+    time4: 'from 14:00 to 02:00'
   },
   form: {
     title: 'Book a table',
     placeholder1: 'Count of person:',
     placeholder2: 'Phone',
-    message: 'Successfully sent',
+    message: 'The application has been successfully sent. The administrator will contact you shortly to confirm the reservation',
     btn: 'Book'
   },
   mainPage: {
     aboutUsTitle: 'About Us',
     aboutUsLink: 'More',
-    phrase:
-      'Мы гордимся нашей\n' +
-      'непринужденной атмосферой\n' +
-      'и дружелюбным персоналом.',
+    phrase: 'We are proud of our\n' + 'unobtrusive atmosphere\n' + 'and friendly staff.',
     mainMenuTitle: 'Menu "Main"',
     lunchMenuTitle: 'Menu "Lunch"',
     menuBtn: 'go to menu',
     posterTitle: 'Upcoming events',
-    posterText:
-      'Атмосфера грандиозного праздника от лучших кавер-бэндов города ждет вас каждый.',
+    posterText: 'The atmosphere of a grand celebration from the best cover bands of the city awaits you every.',
     galleryTitle: 'Gallery'
   },
   aboutUs: {
     aboutUsTitle: 'About Us',
-    text1:
-      'Дизайн обновлённого рестопаба «Госцi» выглядит современно и комфортно. Главный акцент сделан на сочетании зелени, дерева и белого света. Так же на первом плане выступает бар с большой барной стойкой, приветствующий гостей и как бы предлагающий своим видом апперитив. Позади него раскрывается просторный зал с мягкими диванами, различной формы столами и шикарными креслами. Каждая деталь помещения располагает к отдыху, даря возможность насладиться роскошными блюдами, а не отвлекая от них.',
-    text2:
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean\n' +
-      'commodo ligula eget dolor. Aenean massa. Cum sociis natoque\n' +
-      'penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n' +
-      'Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.\n' +
-      'Nulla consequat massa quis enim.\n' +
-      '<br>\n' +
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean\n' +
-      'commodo ligula eget dolor. Aenean massa. Cum sociis natoque\n' +
-      'penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n' +
-      'Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.\n' +
-      'Nulla consequat massa quis enim.\n' +
-      '<br>\n' +
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean\n' +
-      'commodo ligula eget dolor. Aenean massa. Cum sociis natoque\n' +
-      'penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n' +
-      'Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.\n' +
-      'Nulla consequat massa quis enim.',
-    phrase1:
-      'Мы гордимся нашей\n' +
-      'непринужденной атмосферой\n' +
-      'и дружелюбным персоналом.',
-    phrase2:
-      'Хорошие продукты и техника лежат в основе того, что мы делаем. Мы считаем, что лучшие блюда — это опыт.',
+    text1: 'The design of the updated restaurant "Gosci" looks modern and comfortable.' +
+      ' The main emphasis is on the combination of greenery, wood and white light.' +
+      ' Also in the foreground is a bar with a large bar counter,' +
+      ' welcoming guests and as if offering an aperitif with its appearance.' +
+      ' Behind it is a spacious hall with soft sofas, tables of various shapes and luxurious armchairs.' +
+      ' Each detail of the room disposes to rest, giving the opportunity to enjoy luxurious dishes,' +
+      ' and not distracting from them.',
+    text2: '',
+    phrase1: 'We are proud of our\n' + 'unobtrusive atmosphere\n' + 'and friendly staff.',
+    phrase2: 'Good products and technology are at the heart of what we do. We believe that the best dishes are an experience.',
     link1: 'go to menu'
   },
   gallery: {
