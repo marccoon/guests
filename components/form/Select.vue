@@ -1,13 +1,13 @@
 <template>
-  <div v-click-outside="close" class="relative mx-2">
+  <div v-click-outside="close" class="relative">
     <div
       class="font-light cursor-pointer border border-select text-select lg:text-base text-sm w-full p-3 flex items-center justify-between"
-      @click="currentActive = !currentActive"
+      @click="active = !active"
     >
-      {{ placeholder }} {{ options[selectValue] }}
+      {{ placeholder }} {{ selectedLabel }}
       <svg
         :class="{
-          'rotate-180': currentActive,
+          'rotate-180': active,
         }"
         class="transition-all duration-150 transform"
         width="8"
@@ -22,18 +22,19 @@
         />
       </svg>
     </div>
+
     <div
-      v-if="currentActive"
-      class="font-light w-full z-10 absolute top-full uppercase w-16 py-2 text-select bg-black lg:text-base text-sm"
+      v-if="active"
+      class="font-light z-10 absolute top-full uppercase w-full py-2 text-select bg-black lg:text-base text-sm"
     >
       <ul>
         <li
-          v-for="(option, index) in options"
-          :key="index"
+          v-for="(option) in options"
+          :key="getOptionValue(option)"
           class="py-1 px-3 transition-all duration-150 hover:text-select-hover cursor-pointer"
-          @click="optionClick(index)"
+          @click="optionClick(option)"
         >
-          {{ option }}
+          {{ getOptionLabel(option) }}
         </li>
       </ul>
     </div>
@@ -45,48 +46,52 @@ export default {
   name: 'Select',
   props: {
     value: {
-      type: Number,
-      required: true,
+      type: [String, Number],
+      required: true
     },
     placeholder: {
       type: String,
-      default: '',
-    },
-    active: {
-      type: Boolean,
-      required: true,
+      default: ''
     },
     options: {
       type: Array,
-      required: true,
-    },
+      required: true
+    }
+  },
+  data () {
+    return {
+      active: false
+    }
   },
   computed: {
-    currentActive: {
-      get() {
-        return this.active
-      },
-      set(val) {
-        this.$emit('change', val)
-      },
-    },
     selectValue: {
-      get() {
+      get () {
         return this.value
       },
-      set(val) {
+      set (val) {
         this.$emit('select', val)
-      },
+      }
     },
+    selectedLabel () {
+      const option = this.options.find(option => this.getOptionValue(option) === this.value)
+      return this.getOptionLabel(option)
+    }
   },
+
   methods: {
-    optionClick(val) {
-      this.selectValue = val
+    getOptionValue (val) {
+      return val.value || val
+    },
+    getOptionLabel (val) {
+      return val.label || val
+    },
+    optionClick (val) {
+      this.selectValue = this.getOptionValue(val)
       this.close()
     },
-    close() {
-      this.currentActive = false
-    },
-  },
+    close () {
+      this.active = false
+    }
+  }
 }
 </script>

@@ -32,10 +32,18 @@ export default {
   },
   form: {
     title: '预订桌子',
-    placeholder1: '人数：',
-    placeholder2: '电话',
+    persons: '人数：',
+    reason: '原因：',
+    reasonOptions: {
+      business: '商务会议',
+      romantic: '浪漫晚餐',
+      birthday: '生日',
+      third: '找到第三个',
+      other: '其他'
+    },
+    phone: '电话',
     message: '申请已成功发送。管理员将尽快与您联系以确认预订',
-    btn: '预订'
+    reserve: '预订'
   },
   mainPage: {
     aboutUsTitle: '关于我们',

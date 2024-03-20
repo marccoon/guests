@@ -31,10 +31,18 @@ export default {
   },
   form: {
     title: 'Book a table',
-    placeholder1: 'Count of person:',
-    placeholder2: 'Phone',
+    persons: 'Count of person:',
+    reason: 'Reason:',
+    reasonOptions: {
+      business: 'Business meeting',
+      romantic: 'Romantic dinner',
+      birthday: 'Birthday',
+      third: 'Found a third',
+      other: 'Other'
+    },
+    phone: 'Phone',
     message: 'The application has been successfully sent. The administrator will contact you shortly to confirm the reservation',
-    btn: 'Book'
+    reserve: 'Book'
   },
   mainPage: {
     aboutUsTitle: 'About Us',

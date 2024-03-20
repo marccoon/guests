@@ -1,9 +1,9 @@
 <template>
   <form
-    class="bg-form w-full"
+    class="bg-form w-full lg:px-10 md:px-4 px-3"
     :class="{
-      'lg:px-10 xl:py-20 lg:py-12 md:px-4 py-8 px-3': title,
-      'lg:px-10 xl:py-12 lg:py-10 md:px-4 sm:py-6 sm:p-3': !title,
+      'xl:py-20 lg:py-12 py-8': title,
+      'xl:py-12 lg:py-10 py-6': !title,
     }"
     @submit.prevent="submitHandler"
   >
@@ -13,31 +13,49 @@
         :title="$t('form.title')"
         class="mx-auto text-center"
       />
-      <div
-        class="flex xl:justify-between lg:justify-around justify-center flex-wrap"
-      >
-        <div
-          class="xl:w-1/4 md:w-1/3 w-full lg:max-w-64 lg:px-0 px-2 md:m-0 m-2"
-        >
-          <Select
-            class="w-full mx-auto"
-            :active="personSelect"
-            :options="personOptions"
-            :value="currentPerson"
-            :placeholder="$t('form.placeholder1')"
-            @select="currentPerson = $event"
-            @change="personSelect = $event"
-          />
-        </div>
-        <div
-          class="xl:w-1/4 md:w-1/3 w-full lg:max-w-64 flex flex-row lg:px-0 px-2 md:m-0 m-2"
-        >
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-3">
+        <Select
+          class="w-full"
+          :options="personOptions"
+          :value="currentPerson"
+          :placeholder="$t('form.persons')"
+          @select="currentPerson = $event"
+        />
+
+        <Select
+          class="w-full"
+          :options="reasonOptions"
+          :value="currentReason"
+          :placeholder="$t('form.reason')"
+          @select="currentReason = $event"
+        />
+
+        <vue-tel-input
+          ref="vueTel"
+          v-model="phone"
+          default-country="BY"
+          :input-options="{
+            showDialCode: true,
+            required: true,
+            placeholder: $t('form.phone'),
+            styleClasses: 'date-time placeholder-select bg-transparent p-3',
+          }"
+          style-classes="font-light border border-select rounded-none flex justify-center align-middle text-select lg:text-base text-sm w-full h-full"
+          area-required
+          class="phone-wrap"
+          :invalid-msg="$t('validation.requiredPhone')"
+          @validate="errors.phone = $event"
+        />
+
+        <div class="w-full flex flex-row border-collapse">
           <input
             v-model="date"
             type="date"
             required
             class="date-time font-light bg-transparent cursor-pointer border border-select text-select lg:text-base text-sm w-7/12 p-3"
           >
+
           <input
             v-model="time"
             type="time"
@@ -47,40 +65,16 @@
             class="date-time font-light bg-transparent cursor-pointer border border-select text-select lg:text-base text-sm w-5/12 p-3"
           >
         </div>
-        <div
-          class="xl:w-1/4 md:w-1/3 w-full lg:max-w-64 lg:px-0 px-2 md:m-0 m-2"
-        >
-          <vue-tel-input
-            ref="vueTel"
-            v-model="phone"
-            default-country="BY"
-            :input-options="{
-              showDialCode: true,
-              required: true,
-              placeholder: $t('form.placeholder2'),
-              styleClasses: 'date-time placeholder-select bg-transparent p-3',
-            }"
-            style-classes="font-light border border-select rounded-none flex justify-center align-middle text-select lg:text-base text-sm w-full h-full"
-            area-required
-            class="phone-wrap"
-            :invalid-msg="$t('validation.requiredPhone')"
-            @validate="errors.phone = $event"
-          />
-        </div>
 
-        <div
-          class="xl:w-1/5 md:w-1/3 sm:w-1/2 w-full md:max-w-none lg:max-w-64 max-w-56 lg:px-0 px-2 lg:mt-6 md:mt-4 md:m-0 mt-6 m-2 xl:m-0"
-        >
-          <Button
-            class="w-full mx-auto"
-            :btn="$t('form.btn')"
-            :class="{ 'pointer-events-none': success }"
-          />
-        </div>
+        <Button
+          class="w-full lg:col-span-2"
+          :btn="$t('form.reserve')"
+          :class="{ 'pointer-events-none': success }"
+        />
 
         <div
           v-if="success"
-          class="text-center mt-5 w-full font-light bg-transparent text-select lg:text-base text-sm w-full"
+          class="text-center mt-5 w-full font-light bg-transparent text-select lg:text-base text-sm"
         >
           {{ $t('form.message') }}
         </div>
@@ -94,6 +88,13 @@ import Title from '~/components/app/Title'
 import Select from '~/components/form/Select'
 import Button from '~/components/form/Button'
 
+const DEFAULT_VALUES = {
+  person: 1,
+  phone: '',
+  date: '',
+  time: '',
+  reason: 'other'
+}
 export default {
   name: 'Form',
   components: { Title, Select, Button },
@@ -104,15 +105,28 @@ export default {
     }
   },
   data: () => ({
-    personSelect: false,
     personOptions: [1, 2, 3, 4, 5, 6, 7, '8 и более'],
-    currentPerson: 1,
-    phone: '',
-    date: '',
-    time: '',
+    currentPerson: DEFAULT_VALUES.person,
+
+    currentReason: DEFAULT_VALUES.reason,
+
+    phone: DEFAULT_VALUES.phone,
+    date: DEFAULT_VALUES.date,
+    time: DEFAULT_VALUES.time,
     errors: {},
     success: false
   }),
+  computed: {
+    reasonOptions () {
+      return [
+        { value: 'business', label: this.$t('form.reasonOptions.business') },
+        { value: 'romantic', label: this.$t('form.reasonOptions.romantic') },
+        { value: 'birthday', label: this.$t('form.reasonOptions.birthday') },
+        { value: 'third', label: this.$t('form.reasonOptions.third') },
+        { value: 'other', label: this.$t('form.reasonOptions.other') }
+      ]
+    }
+  },
   methods: {
     async submitHandler () {
       if (!this.errors.phone.valid) {
@@ -125,6 +139,7 @@ export default {
         formData.set('date', this.date)
         formData.set('time', this.time)
         formData.set('phone', this.phone)
+        formData.set('reason', this.currentReason)
 
         await this.$axios.$post(
           'https://wp.gosti-minsk.by/wp-json/contact-form-7/v1/contact-forms/5/feedback',
@@ -133,17 +148,18 @@ export default {
         this.success = true
       } catch (e) {
         // eslint-disable-next-line no-console
-        console.log(e)
+        console.error(e)
         if (e.res?.invalid_fields) {
           this.success = true
           // eslint-disable-next-line no-console
-          console.log(e.res.invalid_fields)
+          console.error(e.res.invalid_fields)
         }
       } finally {
-        this.currentPerson = 1
-        this.phone = ''
-        this.date = ''
-        this.time = ''
+        this.currentPerson = DEFAULT_VALUES.person
+        this.phone = DEFAULT_VALUES.phone
+        this.date = DEFAULT_VALUES.date
+        this.time = DEFAULT_VALUES.time
+        this.currentReason = DEFAULT_VALUES.reason
         this.errors = {}
       }
     }

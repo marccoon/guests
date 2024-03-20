@@ -23,7 +23,7 @@ export default {
   layout: 'no-footer',
   async asyncData ({ app }) {
     const posters = await app.$axios.$get('/api/afisha')
-    // console.log(posters)
+
     return { posters }
   }
 }

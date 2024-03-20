@@ -21,12 +21,13 @@
               />
             </div>
           </div>
-          <Form class="transform sm:translate-y-16 translate-y-1/2" />
+
+          <Form class="transform sm:translate-y-16 translate-y-1/4" />
         </div>
       </div>
     </section>
 
-    <section v-if="reserveTabs" class="md:hidden lg:pt-32 sm:pt-24 pt-32">
+    <section v-if="reserveTabs" class="md:hidden lg:pt-32 sm:pt-16 pt-36">
       <div class="container">
         <div class="flex flex-col gap-4">
           <div
