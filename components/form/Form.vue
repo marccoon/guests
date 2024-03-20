@@ -52,6 +52,7 @@
           <input
             v-model="date"
             type="date"
+            :placeholder="$t('form.date')"
             required
             class="date-time font-light bg-transparent cursor-pointer border border-select text-select lg:text-base text-sm w-7/12 p-3"
           >
@@ -59,6 +60,7 @@
           <input
             v-model="time"
             type="time"
+            :placeholder="$t('form.time')"
             min="15:00"
             max="23:30"
             step="600"

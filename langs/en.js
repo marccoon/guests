@@ -41,6 +41,8 @@ export default {
       other: 'Other'
     },
     phone: 'Phone',
+    date: 'Select date',
+    time: 'Select time',
     message: 'The application has been successfully sent. The administrator will contact you shortly to confirm the reservation',
     reserve: 'Book'
   },

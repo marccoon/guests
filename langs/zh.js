@@ -42,6 +42,8 @@ export default {
       other: '其他'
     },
     phone: '电话',
+    date: '选择日期',
+    time: '选择时间',
     message: '申请已成功发送。管理员将尽快与您联系以确认预订',
     reserve: '预订'
   },
