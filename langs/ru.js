@@ -32,6 +32,9 @@ export default {
   form: {
     title: 'Забронировать стол',
     persons: 'Количество персон:',
+    personOptions: {
+      eightPlus: '8 и более'
+    },
     reason: 'Повод:',
     reasonOptions: {
       business: 'Бизнес встреча',

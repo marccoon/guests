@@ -18,17 +18,17 @@
         <Select
           class="w-full"
           :options="personOptions"
-          :value="currentPerson"
+          :value="persons"
           :placeholder="$t('form.persons')"
-          @select="currentPerson = $event"
+          @select="persons = $event"
         />
 
         <Select
           class="w-full"
           :options="reasonOptions"
-          :value="currentReason"
+          :value="reason"
           :placeholder="$t('form.reason')"
-          @select="currentReason = $event"
+          @select="reason = $event"
         />
 
         <vue-tel-input
@@ -91,11 +91,11 @@ import Select from '~/components/form/Select'
 import Button from '~/components/form/Button'
 
 const DEFAULT_VALUES = {
-  person: 1,
-  phone: '',
-  date: '',
-  time: '',
-  reason: 'other'
+  persons: 1,
+  phone: null,
+  date: null,
+  time: null,
+  reason: null
 }
 export default {
   name: 'Form',
@@ -107,11 +107,8 @@ export default {
     }
   },
   data: () => ({
-    personOptions: [1, 2, 3, 4, 5, 6, 7, '8 и более'],
-    currentPerson: DEFAULT_VALUES.person,
-
-    currentReason: DEFAULT_VALUES.reason,
-
+    persons: DEFAULT_VALUES.persons,
+    reason: DEFAULT_VALUES.reason,
     phone: DEFAULT_VALUES.phone,
     date: DEFAULT_VALUES.date,
     time: DEFAULT_VALUES.time,
@@ -119,6 +116,12 @@ export default {
     success: false
   }),
   computed: {
+    personOptions () {
+      return [
+        1, 2, 3, 4, 5, 6, 7,
+        { value: '8+', label: this.$t('form.personOptions.eightPlus') }
+      ]
+    },
     reasonOptions () {
       return [
         { value: 'business', label: this.$t('form.reasonOptions.business') },
@@ -137,11 +140,11 @@ export default {
 
       try {
         const formData = new FormData()
-        formData.set('person', this.personOptions[this.currentPerson].toString())
+        formData.set('person', this.personOptions[this.persons].toString())
         formData.set('date', this.date)
         formData.set('time', this.time)
         formData.set('phone', this.phone)
-        formData.set('reason', this.currentReason)
+        formData.set('reason', this.reason)
 
         await this.$axios.$post(
           'https://wp.gosti-minsk.by/wp-json/contact-form-7/v1/contact-forms/5/feedback',
@@ -157,11 +160,11 @@ export default {
           console.error(e.res.invalid_fields)
         }
       } finally {
-        this.currentPerson = DEFAULT_VALUES.person
+        this.persons = DEFAULT_VALUES.persons
         this.phone = DEFAULT_VALUES.phone
         this.date = DEFAULT_VALUES.date
         this.time = DEFAULT_VALUES.time
-        this.currentReason = DEFAULT_VALUES.reason
+        this.reason = DEFAULT_VALUES.reason
         this.errors = {}
       }
     }

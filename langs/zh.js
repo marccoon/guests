@@ -33,6 +33,9 @@ export default {
   form: {
     title: '预订桌子',
     persons: '人数：',
+    personOptions: {
+      eightPlus: '8人及以上'
+    },
     reason: '原因：',
     reasonOptions: {
       business: '商务会议',

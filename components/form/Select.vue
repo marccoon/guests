@@ -46,8 +46,8 @@ export default {
   name: 'Select',
   props: {
     value: {
-      type: [String, Number],
-      required: true
+      type: [String, Number, null],
+      default: null
     },
     placeholder: {
       type: String,
@@ -74,6 +74,9 @@ export default {
     },
     selectedLabel () {
       const option = this.options.find(option => this.getOptionValue(option) === this.value)
+
+      if (!option) { return '' }
+
       return this.getOptionLabel(option)
     }
   },

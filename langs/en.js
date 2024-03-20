@@ -32,6 +32,9 @@ export default {
   form: {
     title: 'Book a table',
     persons: 'Count of person:',
+    personOptions: {
+      eightPlus: '8 and more'
+    },
     reason: 'Reason:',
     reasonOptions: {
       business: 'Business meeting',
