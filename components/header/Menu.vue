@@ -1,29 +1,11 @@
 <template>
   <menu
-    class="
-      absolute
-      left-0
-      bg-menu
-      transform
-      transition-all
-      duration-750
-      lg:px-8
-      sm:px-6
-      px-4
-      md:pt-10
-      ot-5
-      md:pb-40
-      pb-20
-      xl:w-1/3
-      lg:w-2/5
-      sm:w-1/2
-      w-full
-      m-0
-    "
+    class="absolute left-0 bg-menu transform transition-all duration-750 lg:px-8 sm:px-6 px-4 md:pt-10 pt-5 md:pb-40 pb-20 xl:w-1/3 lg:w-2/5 sm:w-1/2 w-full m-0"
     :class="{
       'top-full translate-y-0': active,
       'top-0 -translate-y-full': !active,
     }"
+    active
   >
     <ul class="text-menu uppercase md:text-xl sm:text-base text-sm">
       <li class="my-6">
@@ -104,29 +86,12 @@
         </nuxt-link>
       </li>
     </ul>
-    <button
-      class="
-        block
-        w-full
-        uppercase
-        text-btn
-        border border-btn
-        lg:text-base
-        text-sm
-        py-3
-        px-4
-        text-center
-        hover:text-btn-hover
-        transition-all
-        duration-150
-        md:mt-20
-        mt-10
-        max-w-64
-      "
-      @click.prevent="openModal"
-    >
-      {{ $t('buttons.menuBtn') }}
-    </button>
+    <Button
+      class="max-w-128 mx-auto lg:col-span-2 restoplace-click-open"
+      :btn="$t('buttons.bookTable')"
+      onclick="window.restoOpenModal('banquet')"
+    />
+
     <!--    <Link-->
     <!--      :linkName="$t('links.menuLink')"-->
     <!--      link="/poster"-->
@@ -136,8 +101,11 @@
 </template>
 
 <script>
+import Button from '~/components/form/Button.vue'
+
 export default {
   name: 'Menu',
+  components: { Button },
   props: {
     active: {
       type: Boolean,
@@ -160,13 +128,6 @@ export default {
   mounted () {
     this.height = this.$refs.submenu.offsetHeight + 'px'
     this.subMenu = false
-  },
-  methods: {
-    openModal () {
-      this.$store.dispatch('showModal')
-    }
   }
 }
 </script>
-
-<style scoped></style>

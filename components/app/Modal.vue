@@ -47,30 +47,26 @@
           />
         </svg>
       </button>
+
       <div class="flex h-full items-center">
-        <Form class="transform sm:translate-y-16 translate-y-1/2" />
+        <slot name="default" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Form from '~/components/form/Form'
-
 export default {
   name: 'Modal',
-  components: { Form },
   computed: {
-    active() {
+    active () {
       return this.$store.state.modal
-    },
+    }
   },
   methods: {
-    close() {
+    close () {
       this.$store.dispatch('hideModal')
-    },
-  },
+    }
+  }
 }
 </script>
-
-<style scoped></style>

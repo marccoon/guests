@@ -6,7 +6,6 @@
 
     <Footer />
     <ModalMap />
-    <Modal />
   </div>
 </template>
 
@@ -14,9 +13,8 @@
 import Header from '~/components/header/Header'
 import Footer from '~/components/footer/Footer'
 import ModalMap from '~/components/app/ModalMap'
-import Modal from '~/components/app/Modal'
 
 export default {
-  components: { Modal, ModalMap, Footer, Header },
+  components: { ModalMap, Footer, Header }
 }
 </script>

@@ -6,7 +6,6 @@
 
     <footer class="bg-bg footer">
       <div class="container">
-        <Form class="" title="true" />
         <div class="flex flex-col items-center lg:py-16 sm:py-12 py-8">
           <Logo />
           <Contacts class="sm:mt-8 mt-4" />
@@ -21,7 +20,6 @@
       </div>
     </footer>
     <ModalMap />
-    <Modal />
   </div>
 </template>
 
@@ -29,11 +27,9 @@
 import Header from '~/components/header/Header'
 import Logo from '~/components/app/Logo'
 import Contacts from '~/pages/contacts'
-import Form from '~/components/form/Form'
 import ModalMap from '~/components/app/ModalMap'
-import Modal from '~/components/app/Modal'
 
 export default {
-  components: { Modal, ModalMap, Form, Contacts, Logo, Header },
+  components: { ModalMap, Contacts, Logo, Header }
 }
 </script>

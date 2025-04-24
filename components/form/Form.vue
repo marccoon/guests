@@ -70,7 +70,7 @@
 
         <Button
           class="w-full lg:col-span-2"
-          :btn="$t('form.reserve')"
+          :btn="$t('buttons.bookTable')"
           :class="{ 'pointer-events-none': success }"
         />
 

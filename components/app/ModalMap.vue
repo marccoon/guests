@@ -1,20 +1,7 @@
 <template>
   <div
     v-if="active"
-    class="
-      bg-black
-      flex
-      items-center
-      justify-center
-      fixed
-      left-0
-      right-0
-      top-0
-      bottom-0
-      z-50
-      transition-opacity
-      duration-500
-    "
+    class="bg-black flex items-center justify-center fixed left-0 right-0 top-0 bottom-0 z-50 transition-opacity duration-500"
     @click.self="close"
   >
     <div class="container h-4/5">
@@ -65,7 +52,7 @@
         width="100%"
         height="100%"
         frameborder="0"
-      ></iframe>
+      />
     </div>
   </div>
 </template>
@@ -74,15 +61,15 @@
 export default {
   name: 'ModalMap',
   computed: {
-    active() {
+    active () {
       return this.$store.state.map
-    },
+    }
   },
   methods: {
-    close() {
+    close () {
       this.$store.dispatch('hideMap')
-    },
-  },
+    }
+  }
 }
 </script>
 

@@ -22,7 +22,7 @@
             </div>
           </div>
 
-          <Form class="transform sm:translate-y-16 translate-y-1/4" />
+          <FormRestoplace class="transform sm:translate-y-16 translate-y-1/4" />
         </div>
       </div>
     </section>
@@ -73,9 +73,7 @@
           class="mx-auto"
         />
       </div>
-      <div
-        class="md:w-1/2 w-full xl:py-56 lg:py-36 md:py-16 sm:py-20 py-16 bg-index-menu-2 bg-cover"
-      >
+      <div class="md:w-1/2 w-full xl:py-56 lg:py-36 md:py-16 sm:py-20 py-16 bg-index-menu-2 bg-cover">
         <Card
           :title="$t('mainPage.lunchMenuTitle')"
           :btn="$t('mainPage.menuBtn')"
@@ -114,9 +112,7 @@
       </div>
     </section>
     <section class="flex flex-wrap">
-      <div
-        class="lg:w-1/2 w-full bg-contact flex justify-center items-center py-10"
-      >
+      <div class="lg:w-1/2 w-full bg-contact flex justify-center items-center py-10">
         <div class="flex flex-col items-center">
           <Title :title="$t('contacts.title')" class="mx-auto block" />
           <Contacts />
@@ -131,7 +127,7 @@
 import { decode } from 'html-entities'
 import Card from '~/components/cards/Card'
 import SocialIcon from '~/components/app/SocialIcon'
-import Form from '~/components/form/Form'
+import FormRestoplace from '~/components/form/FormRestoplace'
 import PhotoText from '~/components/app/PhotoText'
 import PhotoPhrase from '~/components/app/PhotoPhrase'
 import Title from '~/components/app/Title'
@@ -150,7 +146,7 @@ export default {
     PosterSlider,
     Card,
     SocialIcon,
-    Form,
+    FormRestoplace,
     PhotoText,
     PhotoPhrase,
     Title,

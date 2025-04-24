@@ -12,7 +12,7 @@ export default {
     menuLink: 'New Year\'s corporate parties'
   },
   buttons: {
-    menuBtn: 'Book a table',
+    bookTable: 'Book a table',
     posterBtn: 'Book'
   },
   contacts: {
@@ -46,8 +46,7 @@ export default {
     phone: 'Phone',
     date: 'Select date',
     time: 'Select time',
-    message: 'The application has been successfully sent. The administrator will contact you shortly to confirm the reservation',
-    reserve: 'Book'
+    message: 'The application has been successfully sent. The administrator will contact you shortly to confirm the reservation'
   },
   mainPage: {
     aboutUsTitle: 'About Us',

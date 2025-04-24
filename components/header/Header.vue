@@ -20,16 +20,7 @@
     </header>
     <div
       ref="menu"
-      class="
-        absolute
-        container
-        h-full
-        left-1/2
-        top-0
-        transform
-        -translate-x-1/2
-        z-10
-      "
+      class="absolute container h-full left-1/2 top-0 transform -translate-x-1/2 z-10"
     >
       <Menu v-if="menuOpen" :active="menuOpen" @closeMenu="closeMenu" />
     </div>

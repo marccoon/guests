@@ -1,17 +1,7 @@
 <template>
   <div class="relative">
     <div
-      class="
-        cursor-pointer
-        border border-select
-        text-select
-        w-16
-        h-9
-        flex
-        items-center
-        justify-around
-        uppercase
-      "
+      class="cursor-pointer border border-select text-select w-16 h-9 flex items-center justify-around uppercase"
       @click="active = !active"
     >
       {{ locale }}
